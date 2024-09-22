@@ -6,10 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kupac\Kupac.csproj" />
+    <ProjectReference Include="..\Kupac\Kupac.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

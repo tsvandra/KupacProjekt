@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3wtkZ0EnegE=",
+  "dgSpecHash": "wKUrY1UO9MQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
+  "projectFilePath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tsvan\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\tsvan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

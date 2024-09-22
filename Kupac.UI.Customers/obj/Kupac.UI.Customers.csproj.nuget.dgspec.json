@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj": {}
+    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj": {
+    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
+        "projectUniqueName": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
         "projectName": "Kupac.UI.Customers",
-        "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
+        "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj",
         "packagesPath": "C:\\Users\\tsvan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac.UI.Customers\\obj\\",
+        "outputPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tsvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\Kupac.csproj": {
-                "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\Kupac.csproj"
+              "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj": {
+                "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\Kupac.csproj": {
+    "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\Kupac.csproj",
-        "projectName": "Kupac",
-        "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\Kupac.csproj",
+        "projectUniqueName": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj",
+        "projectName": "Kupac.Data",
+        "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj",
         "packagesPath": "C:\\Users\\tsvan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\Kupac\\obj\\",
+        "outputPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tsvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
