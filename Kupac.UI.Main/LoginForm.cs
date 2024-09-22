@@ -1,4 +1,6 @@
+using Kupac.AdatbazisTablak;
 using Kupac.Data.Properties;
+using Kupac.DbContexts;
 using Kupac.UI.Main.Properties;
 
 namespace Kupac.UI.Main
@@ -12,7 +14,7 @@ namespace Kupac.UI.Main
             pictureBox1.InitialImage = Kupac.Data.Properties.Resources.human_icon;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
             //pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
             //pictureBox1.Top = ((this.ClientSize.Height - pictureBox1.Height) / 2) - 50;
@@ -26,5 +28,11 @@ namespace Kupac.UI.Main
                 MessageBox.Show("A kép nem található");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

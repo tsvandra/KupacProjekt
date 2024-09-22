@@ -32,6 +32,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -72,12 +73,30 @@
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.White;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.SeaShell;
+            button2.FlatAppearance.MouseOverBackColor = SystemColors.Window;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.Coral;
+            button2.Location = new Point(713, 898);
+            button2.Name = "button2";
+            button2.Size = new Size(350, 46);
+            button2.TabIndex = 4;
+            button2.Text = "Login";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Thistle;
             ClientSize = new Size(1900, 1000);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -85,8 +104,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            Load += Form1_Load;
+            Text = "Login";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -98,5 +117,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Button button1;
+        private Button button2;
     }
 }
