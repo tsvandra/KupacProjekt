@@ -69,3 +69,4 @@ C:\Users\tsvan\source\repos\tsvandra\KupacProjekt\Kupac.UI.Main\bin\Debug\net8.0
 C:\Users\tsvan\source\repos\tsvandra\KupacProjekt\Kupac.UI.Main\bin\Debug\net8.0-windows\Kupac.Data.pdb
 C:\Users\tsvan\source\repos\tsvandra\KupacProjekt\Kupac.UI.Main\obj\Debug\net8.0-windows\Kupac.UI.EB8211A5.Up2Date
 C:\Users\tsvan\source\repos\tsvandra\KupacProjekt\Kupac.UI.Main\obj\Debug\net8.0-windows\Kupac.UI.Main.LoginForm.resources
+C:\Users\tsvan\source\repos\tsvandra\KupacProjekt\Kupac.UI.Main\obj\Debug\net8.0-windows\Kupac.UI.Main.MainForm.resources

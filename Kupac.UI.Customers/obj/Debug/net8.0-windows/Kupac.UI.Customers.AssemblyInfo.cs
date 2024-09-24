@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kupac.UI.Customers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb9083cebab5c64c1581d280e2d49b8f794c54ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d6c8ed43df70a11458135c19027269e518ed137")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kupac.UI.Customers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kupac.UI.Customers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,11 +2,14 @@ using Kupac.AdatbazisTablak;
 using Kupac.Data.Properties;
 using Kupac.DbContexts;
 using Kupac.UI.Main.Properties;
+using Kupac.UI.Main.BaseClasses;
+using System.Runtime.InteropServices;
 
 namespace Kupac.UI.Main
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : BaseForm
     {
+
         public LoginForm()
         {
             InitializeComponent();
@@ -25,14 +28,55 @@ namespace Kupac.UI.Main
             }
             else
             {
-                MessageBox.Show("A kép nem található");
+                MessageBox.Show("Obrázok sa nenašiel");
             }
         }
-
+        // Cancel button
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            ValidateLogin();
+        }
+
+        private void ValidateLogin()
+        {
+            if (string.IsNullOrEmpty(userNameTextBox.Text))
+            {
+                MessageBox.Show("Prosím zadajte prihlasovacie meno!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(passwordTextBox.Text))
+            {
+                MessageBox.Show("Prosím zadajte Vaše heslo!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (IsValidUser(userNameTextBox.Text, passwordTextBox.Text))
+            {
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Zlé prihlasovacie meno alebo heslo!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsValidUser(string username, string password)
+        {
+            if (username == "admin" && password == "admin")
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
