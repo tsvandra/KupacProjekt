@@ -59,5 +59,15 @@ namespace Kupac.UI.Main.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap human_icon_in_circle_vector_25482162 {
+            get {
+                object obj = ResourceManager.GetObject("human-icon-in-circle-vector-25482162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

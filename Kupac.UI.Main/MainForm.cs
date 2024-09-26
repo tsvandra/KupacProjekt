@@ -17,5 +17,10 @@ namespace Kupac.UI.Main
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
