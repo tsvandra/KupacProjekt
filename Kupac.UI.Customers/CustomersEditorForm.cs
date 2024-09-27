@@ -11,6 +11,7 @@ namespace Kupac
         public CustomersEditorForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             _customerManager = new CustomerManager();
         }
 
@@ -55,6 +56,16 @@ namespace Kupac
             addressTextBox.ForeColor = Color.Gray;
             cityTextBox.Text = defaultText;
             cityTextBox.ForeColor = Color.Gray;
+
+            using (var context = new CapillarContext())
+            {
+
+                _customerManager.LoadCustomersFromDatabase(context);
+
+                textBox1.Text = _customerManager.ListCustomers();
+
+                dataGridView1.DataSource = _customerManager.ListCustomers();
+            }
         }
 
         private void nameTextbox_Enter(object sender, EventArgs e)

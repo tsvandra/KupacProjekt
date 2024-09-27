@@ -13,7 +13,7 @@ namespace Kupac.UI.Main
         public LoginForm()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             pictureBox1.InitialImage = Kupac.Data.Properties.Resources.human_icon;
         }
 
@@ -30,6 +30,11 @@ namespace Kupac.UI.Main
             {
                 MessageBox.Show("Obrázok sa nenašiel");
             }
+
+#if DEBUG
+            userNameTextBox.Text = "admin";
+            passwordTextBox.Text = "admin";
+#endif
         }
         // Cancel button
         private void button2_Click(object sender, EventArgs e)
@@ -77,6 +82,25 @@ namespace Kupac.UI.Main
             }
 
             return false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidateLogin();
+            }
         }
     }
 }

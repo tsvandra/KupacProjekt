@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "Kupac.UI.Main/1.0.0": {
         "dependencies": {
-          "Kupac.Data": "1.0.0"
+          "Kupac.Data": "1.0.0",
+          "Kupac.UI.Customers": "1.0.0"
         },
         "runtime": {
           "Kupac.UI.Main.dll": {}
@@ -551,6 +552,14 @@
         "runtime": {
           "Kupac.Data.dll": {}
         }
+      },
+      "Kupac.UI.Customers/1.0.0": {
+        "dependencies": {
+          "Kupac.Data": "1.0.0"
+        },
+        "runtime": {
+          "Kupac.UI.Customers.dll": {}
+        }
       }
     }
   },
@@ -960,6 +969,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Kupac.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Kupac.UI.Customers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

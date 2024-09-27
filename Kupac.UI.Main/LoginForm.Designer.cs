@@ -166,6 +166,7 @@
             button1.TabIndex = 0;
             button1.Text = "_";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -180,6 +181,7 @@
             button3.TabIndex = 1;
             button3.Text = "X";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // LoginForm
             // 
@@ -194,6 +196,7 @@
             Padding = new Padding(10, 15, 10, 10);
             Text = "Login";
             Load += LoginForm_Load;
+            KeyDown += LoginForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

@@ -38,9 +38,13 @@ namespace Kupac.UI.Main.BaseClasses
         public BaseForm() 
         {
             this.BackColor = Color.Thistle;
-            
 
+            FormBorderStyle = FormBorderStyle.None;
+            StartPosition = FormStartPosition.CenterScreen;
+        }
 
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
             using (Graphics g = this.CreateGraphics())
             {
                 float dpiX = g.DpiX;
@@ -55,12 +59,9 @@ namespace Kupac.UI.Main.BaseClasses
 
                 // 80%-os méret beállítása
                 this.Size = new Size(
-                    (int)((screenWidth * 0.8) / scaleFactorX), 
+                    (int)((screenWidth * 0.8) / scaleFactorX),
                     (int)((screenHeight * 0.8) / scaleFactorY));
             }
-
-            FormBorderStyle = FormBorderStyle.None;
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
         // With this i can move the form aruond

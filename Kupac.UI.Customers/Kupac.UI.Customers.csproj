@@ -15,9 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CustomersEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="CustomersEditorForm.cs" />
   </ItemGroup>
 
 </Project>

@@ -1073,6 +1073,22 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
+      },
+      "Kupac.UI.Customers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Kupac.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Kupac.UI.Customers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Kupac.UI.Customers.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -2895,11 +2911,17 @@
       "type": "project",
       "path": "../Kupac/Kupac.Data.csproj",
       "msbuildProject": "../Kupac/Kupac.Data.csproj"
+    },
+    "Kupac.UI.Customers/1.0.0": {
+      "type": "project",
+      "path": "../Kupac.UI.Customers/Kupac.UI.Customers.csproj",
+      "msbuildProject": "../Kupac.UI.Customers/Kupac.UI.Customers.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Kupac.Data >= 1.0.0"
+      "Kupac.Data >= 1.0.0",
+      "Kupac.UI.Customers >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2930,6 +2952,9 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
+            "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj": {
+              "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac.UI.Customers\\Kupac.UI.Customers.csproj"
+            },
             "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj": {
               "projectPath": "C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Kupac.Data.csproj"
             }
