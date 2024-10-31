@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Kupac.UI.Main/obj/Debug/net8.0-windows/ref/Kupac.UI.Main.dll
+/Kupac.UI.Main/obj/Debug/net8.0-windows/refint/Kupac.UI.Main.dll
