@@ -37,8 +37,10 @@ namespace Kupac
 
                 MessageBox.Show("Uzivatel bol uspesne pridaný");
                 _customerManager.LoadCustomersFromDatabase(context);
+                var customers = context.Customers.ToList();
 
-                textBox1.Text = _customerManager.ListCustomers();
+                customerDataGridView.DataSource = customers;
+                //textBox1.Text = _customerManager.ListCustomers();
             }
         }
 
@@ -61,11 +63,14 @@ namespace Kupac
             {
 
                 _customerManager.LoadCustomersFromDatabase(context);
+                var customers = context.Customers.ToList();
 
-                textBox1.Text = _customerManager.ListCustomers();
+                customerDataGridView.DataSource = customers;
 
-                dataGridView1.DataSource = _customerManager.ListCustomers();
+                CustomizeColumns();
             }
+
+
         }
 
         private void nameTextbox_Enter(object sender, EventArgs e)
@@ -182,5 +187,36 @@ namespace Kupac
                 cityTextBox.ForeColor = Color.Gray;
             }
         }
+
+        private void CustomizeColumns()
+        {
+            if (customerDataGridView.Columns["ID"] != null)
+            {
+                customerDataGridView.Columns["ID"].Visible = false; // Elrejti az ID-t
+            }
+
+            if (customerDataGridView.Columns["FirstName"] != null)
+            {
+                customerDataGridView.Columns["FirstName"].HeaderText = "Keresztnév";
+            }
+
+            if (customerDataGridView.Columns["LastName"] != null)
+            {
+                customerDataGridView.Columns["LastName"].HeaderText = "Vezetéknév";
+            }
+
+            if (customerDataGridView.Columns["Email"] != null)
+            {
+                customerDataGridView.Columns["Email"].HeaderText = "Email cím";
+            }
+
+            if (customerDataGridView.Columns["MobilPhone"] != null)
+            {
+                customerDataGridView.Columns["MobilPhone"].HeaderText = "Mobiltelefon";
+            }
+        }
+
     }
+
+
 }

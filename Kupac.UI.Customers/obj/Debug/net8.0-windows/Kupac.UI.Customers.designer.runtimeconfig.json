@@ -12,8 +12,9 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\tsvan\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\tsvan\\.nuget\\packages"
+      "C:\\Users\\Tsvandra\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Tsvandra\\.nuget\\packages",
+      "C:\\Program Files (x86)\\MESCIUS\\ComponentOne\\WinForms\\bin\\v8"
     ],
     "configProperties": {
       "System.Reflection.NullabilityInfoContext.IsSupported": true,

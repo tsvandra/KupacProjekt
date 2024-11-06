@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            textBox1 = new TextBox();
             menoLabel = new Label();
             priezviskoLabel = new Label();
             EmailLabel = new Label();
@@ -49,27 +48,18 @@
             stateTextBox = new TextBox();
             phoneTextBox = new TextBox();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
-            customerManagerBindingSource = new BindingSource(components);
             customerManagerBindingSource1 = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
+            customerManagerBindingSource = new BindingSource(components);
+            customerDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(59, 209);
-            textBox1.Margin = new Padding(2, 1, 2, 1);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(654, 136);
-            textBox1.TabIndex = 1;
             // 
             // menoLabel
             // 
             menoLabel.AutoSize = true;
-            menoLabel.Location = new Point(61, 74);
+            menoLabel.Location = new Point(61, 17);
             menoLabel.Margin = new Padding(2, 0, 2, 0);
             menoLabel.Name = "menoLabel";
             menoLabel.Size = new Size(38, 15);
@@ -79,7 +69,7 @@
             // priezviskoLabel
             // 
             priezviskoLabel.AutoSize = true;
-            priezviskoLabel.Location = new Point(61, 107);
+            priezviskoLabel.Location = new Point(61, 50);
             priezviskoLabel.Margin = new Padding(2, 0, 2, 0);
             priezviskoLabel.Name = "priezviskoLabel";
             priezviskoLabel.Size = new Size(59, 15);
@@ -89,7 +79,7 @@
             // EmailLabel
             // 
             EmailLabel.AutoSize = true;
-            EmailLabel.Location = new Point(61, 140);
+            EmailLabel.Location = new Point(61, 83);
             EmailLabel.Margin = new Padding(2, 0, 2, 0);
             EmailLabel.Name = "EmailLabel";
             EmailLabel.Size = new Size(36, 15);
@@ -98,7 +88,7 @@
             // 
             // nameTextbox
             // 
-            nameTextbox.Location = new Point(135, 74);
+            nameTextbox.Location = new Point(135, 17);
             nameTextbox.Margin = new Padding(2, 1, 2, 1);
             nameTextbox.Name = "nameTextbox";
             nameTextbox.Size = new Size(110, 23);
@@ -108,7 +98,7 @@
             // 
             // priezviskoTextBox
             // 
-            priezviskoTextBox.Location = new Point(135, 107);
+            priezviskoTextBox.Location = new Point(135, 50);
             priezviskoTextBox.Margin = new Padding(2, 1, 2, 1);
             priezviskoTextBox.Name = "priezviskoTextBox";
             priezviskoTextBox.Size = new Size(110, 23);
@@ -118,7 +108,7 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(135, 140);
+            emailTextBox.Location = new Point(135, 83);
             emailTextBox.Margin = new Padding(2, 1, 2, 1);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(110, 23);
@@ -129,7 +119,7 @@
             // mobilPhoneLabel
             // 
             mobilPhoneLabel.AutoSize = true;
-            mobilPhoneLabel.Location = new Point(309, 74);
+            mobilPhoneLabel.Location = new Point(309, 17);
             mobilPhoneLabel.Margin = new Padding(2, 0, 2, 0);
             mobilPhoneLabel.Name = "mobilPhoneLabel";
             mobilPhoneLabel.Size = new Size(36, 15);
@@ -139,7 +129,7 @@
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new Point(309, 107);
+            addressLabel.Location = new Point(309, 50);
             addressLabel.Margin = new Padding(2, 0, 2, 0);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new Size(43, 15);
@@ -149,7 +139,7 @@
             // cityLabel
             // 
             cityLabel.AutoSize = true;
-            cityLabel.Location = new Point(309, 140);
+            cityLabel.Location = new Point(309, 83);
             cityLabel.Margin = new Padding(2, 0, 2, 0);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new Size(40, 15);
@@ -158,7 +148,7 @@
             // 
             // mobilPhoneTextBox
             // 
-            mobilPhoneTextBox.Location = new Point(377, 74);
+            mobilPhoneTextBox.Location = new Point(377, 17);
             mobilPhoneTextBox.Margin = new Padding(2, 1, 2, 1);
             mobilPhoneTextBox.Name = "mobilPhoneTextBox";
             mobilPhoneTextBox.Size = new Size(110, 23);
@@ -168,7 +158,7 @@
             // 
             // addressTextBox
             // 
-            addressTextBox.Location = new Point(377, 107);
+            addressTextBox.Location = new Point(377, 50);
             addressTextBox.Margin = new Padding(2, 1, 2, 1);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(110, 23);
@@ -178,7 +168,7 @@
             // 
             // cityTextBox
             // 
-            cityTextBox.Location = new Point(377, 140);
+            cityTextBox.Location = new Point(377, 83);
             cityTextBox.Margin = new Padding(2, 1, 2, 1);
             cityTextBox.Name = "cityTextBox";
             cityTextBox.Size = new Size(110, 23);
@@ -189,7 +179,7 @@
             // postalCodeLabel
             // 
             postalCodeLabel.AutoSize = true;
-            postalCodeLabel.Location = new Point(528, 74);
+            postalCodeLabel.Location = new Point(528, 17);
             postalCodeLabel.Margin = new Padding(2, 0, 2, 0);
             postalCodeLabel.Name = "postalCodeLabel";
             postalCodeLabel.Size = new Size(28, 15);
@@ -199,7 +189,7 @@
             // stateLabel
             // 
             stateLabel.AutoSize = true;
-            stateLabel.Location = new Point(528, 107);
+            stateLabel.Location = new Point(528, 50);
             stateLabel.Margin = new Padding(2, 0, 2, 0);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new Size(27, 15);
@@ -209,7 +199,7 @@
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new Point(528, 140);
+            phoneLabel.Location = new Point(528, 83);
             phoneLabel.Margin = new Padding(2, 0, 2, 0);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new Size(44, 15);
@@ -218,7 +208,7 @@
             // 
             // postalCodeTextBox
             // 
-            postalCodeTextBox.Location = new Point(603, 74);
+            postalCodeTextBox.Location = new Point(603, 17);
             postalCodeTextBox.Margin = new Padding(2, 1, 2, 1);
             postalCodeTextBox.Name = "postalCodeTextBox";
             postalCodeTextBox.Size = new Size(110, 23);
@@ -226,7 +216,7 @@
             // 
             // stateTextBox
             // 
-            stateTextBox.Location = new Point(603, 107);
+            stateTextBox.Location = new Point(603, 50);
             stateTextBox.Margin = new Padding(2, 1, 2, 1);
             stateTextBox.Name = "stateTextBox";
             stateTextBox.Size = new Size(110, 23);
@@ -234,7 +224,7 @@
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(603, 140);
+            phoneTextBox.Location = new Point(603, 83);
             phoneTextBox.Margin = new Padding(2, 1, 2, 1);
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(110, 23);
@@ -246,7 +236,7 @@
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(59, 174);
+            button1.Location = new Point(59, 117);
             button1.Margin = new Padding(2, 1, 2, 1);
             button1.Name = "button1";
             button1.Size = new Size(131, 22);
@@ -255,23 +245,21 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // customerManagerBindingSource1
             // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.DataSource = customerManagerBindingSource1;
-            dataGridView1.Location = new Point(738, 166);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(368, 249);
-            dataGridView1.TabIndex = 20;
+            customerManagerBindingSource1.DataSource = typeof(AdatbazisTablak.CustomerManager);
             // 
             // customerManagerBindingSource
             // 
             customerManagerBindingSource.DataSource = typeof(AdatbazisTablak.CustomerManager);
             // 
-            // customerManagerBindingSource1
+            // customerDataGridView
             // 
-            customerManagerBindingSource1.DataSource = typeof(AdatbazisTablak.CustomerManager);
+            customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerDataGridView.Location = new Point(61, 157);
+            customerDataGridView.Name = "customerDataGridView";
+            customerDataGridView.Size = new Size(652, 260);
+            customerDataGridView.TabIndex = 21;
             // 
             // CustomersEditorForm
             // 
@@ -279,7 +267,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1249, 584);
-            Controls.Add(dataGridView1);
+            Controls.Add(customerDataGridView);
             Controls.Add(phoneTextBox);
             Controls.Add(stateTextBox);
             Controls.Add(postalCodeTextBox);
@@ -298,21 +286,19 @@
             Controls.Add(EmailLabel);
             Controls.Add(priezviskoLabel);
             Controls.Add(menoLabel);
-            Controls.Add(textBox1);
             Controls.Add(button1);
             Margin = new Padding(2, 1, 2, 1);
             Name = "CustomersEditorForm";
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)customerDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBox1;
         private Label menoLabel;
         private Label priezviskoLabel;
         private Label EmailLabel;
@@ -332,8 +318,8 @@
         private TextBox stateTextBox;
         private TextBox phoneTextBox;
         private Button button1;
-        private DataGridView dataGridView1;
         private BindingSource customerManagerBindingSource1;
         private BindingSource customerManagerBindingSource;
+        private DataGridView customerDataGridView;
     }
 }
