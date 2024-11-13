@@ -2,7 +2,7 @@ using Kupac.AdatbazisTablak;
 using Kupac.Data.Properties;
 using Kupac.DbContexts;
 using Kupac.UI.Main.Properties;
-using Kupac.UI.Main.BaseClasses;
+using Kupac.UI.Shared.BaseClasses;
 using System.Runtime.InteropServices;
 
 namespace Kupac.UI.Main

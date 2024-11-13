@@ -1,12 +1,18 @@
 using Kupac.AdatbazisTablak;
 using Kupac.DbContexts;
+using Kupac.UI.Shared;
+using Kupac.UI.Shared.BaseClasses;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Kupac
 {
-    public partial class CustomersEditorForm : Form
+    public partial class CustomersEditorForm : BaseForm
     {
         private CustomerManager _customerManager;
-        private string defaultText = "Zadat hodnotu";
+        private const string defaultText = "Zadat hodnotu";
+        private CustomDataGridView customerDataGridView;
 
         public CustomersEditorForm()
         {
@@ -21,6 +27,8 @@ namespace Kupac
             string lastName = priezviskoTextBox.Text;
             string email = emailTextBox.Text;
             string mobilphone = mobilPhoneTextBox.Text;
+
+
 
             var customer = new Customer
             {
@@ -40,7 +48,6 @@ namespace Kupac
                 var customers = context.Customers.ToList();
 
                 customerDataGridView.DataSource = customers;
-                //textBox1.Text = _customerManager.ListCustomers();
             }
         }
 

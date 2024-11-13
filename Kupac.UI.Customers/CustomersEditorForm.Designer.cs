@@ -1,4 +1,7 @@
-﻿namespace Kupac
+﻿using Kupac.UI.Shared;
+using Kupac.UI.Shared.BaseClasses;
+
+namespace Kupac
 {
     partial class CustomersEditorForm
     {
@@ -28,6 +31,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            customerDataGridView = new CustomDataGridView();
+            customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerDataGridView.Location = new Point(61, 157);
+            customerDataGridView.Name = "customerDataGridView";
+            customerDataGridView.Size = new Size(652, 260);
+            customerDataGridView.TabIndex = 21;
             components = new System.ComponentModel.Container();
             menoLabel = new Label();
             priezviskoLabel = new Label();
@@ -50,7 +60,7 @@
             button1 = new Button();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
-            customerDataGridView = new DataGridView();
+            //customerDataGridView = new CustomDataGridView();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
@@ -320,6 +330,6 @@
         private Button button1;
         private BindingSource customerManagerBindingSource1;
         private BindingSource customerManagerBindingSource;
-        private DataGridView customerDataGridView;
+        //private CustomDataGridView customerDataGridView;
     }
 }

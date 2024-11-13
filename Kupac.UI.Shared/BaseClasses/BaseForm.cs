@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kupac.UI.Main.BaseClasses
+namespace Kupac.UI.Shared.BaseClasses
 {
     public class BaseForm : Form
     {

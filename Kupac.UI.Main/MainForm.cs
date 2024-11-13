@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kupac.UI.Main.BaseClasses;
+using Kupac.UI.Shared.BaseClasses;
 using Kupac.UI.Customers;
 
 namespace Kupac.UI.Main
