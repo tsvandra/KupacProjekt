@@ -71,5 +71,10 @@ namespace Kupac.UI.Main
             LoadFormIntoPanel(new CustomersEditorForm());
             SetButtonColor(customersButton, Color.AntiqueWhite);
         }
+
+        private void minimiseApp_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+
+        private void closeApp_Click(object sender, EventArgs e) => Application.Exit();
+        
     }
 }

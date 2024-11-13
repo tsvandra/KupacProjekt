@@ -36,11 +36,16 @@
             dashBoardButton = new Button();
             ordersButton = new Button();
             mainFunctionPanel = new TableLayoutPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            minimiseApp = new Button();
+            closeApp = new Button();
             mainInformationPanel = new Panel();
             mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userPictureBox).BeginInit();
             navigationTablePanel.SuspendLayout();
             navigationalPanel.SuspendLayout();
+            mainFunctionPanel.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
@@ -157,16 +162,64 @@
             // mainFunctionPanel
             // 
             mainFunctionPanel.BackColor = Color.Thistle;
-            mainFunctionPanel.ColumnCount = 1;
-            mainFunctionPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            mainFunctionPanel.ColumnCount = 2;
+            mainFunctionPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            mainFunctionPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            mainFunctionPanel.Controls.Add(tableLayoutPanel1, 1, 0);
             mainFunctionPanel.Dock = DockStyle.Fill;
             mainFunctionPanel.Location = new Point(203, 3);
             mainFunctionPanel.Name = "mainFunctionPanel";
             mainFunctionPanel.RowCount = 2;
-            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 15.625F));
-            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 84.375F));
+            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 22.1649475F));
+            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 77.83505F));
             mainFunctionPanel.Size = new Size(1274, 194);
             mainFunctionPanel.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(minimiseApp, 0, 0);
+            tableLayoutPanel1.Controls.Add(closeApp, 1, 0);
+            tableLayoutPanel1.Location = new Point(1217, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(54, 37);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // minimiseApp
+            // 
+            minimiseApp.BackColor = Color.Thistle;
+            minimiseApp.Dock = DockStyle.Top;
+            minimiseApp.FlatAppearance.BorderSize = 0;
+            minimiseApp.FlatStyle = FlatStyle.Flat;
+            minimiseApp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            minimiseApp.ForeColor = SystemColors.ControlText;
+            minimiseApp.Location = new Point(3, 3);
+            minimiseApp.Name = "minimiseApp";
+            minimiseApp.Size = new Size(21, 23);
+            minimiseApp.TabIndex = 3;
+            minimiseApp.Text = "_";
+            minimiseApp.UseVisualStyleBackColor = false;
+            minimiseApp.Click += minimiseApp_Click;
+            // 
+            // closeApp
+            // 
+            closeApp.BackColor = Color.Thistle;
+            closeApp.Dock = DockStyle.Top;
+            closeApp.FlatAppearance.BorderSize = 0;
+            closeApp.FlatStyle = FlatStyle.Flat;
+            closeApp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            closeApp.Location = new Point(30, 3);
+            closeApp.Name = "closeApp";
+            closeApp.Size = new Size(21, 23);
+            closeApp.TabIndex = 2;
+            closeApp.Text = "X";
+            closeApp.UseVisualStyleBackColor = false;
+            closeApp.Click += closeApp_Click;
             // 
             // mainInformationPanel
             // 
@@ -183,7 +236,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1500, 761);
             Controls.Add(mainPanel);
-            Location = new Point(0, 0);
             Name = "MainForm";
             Padding = new Padding(10, 15, 10, 10);
             Text = "MainForm";
@@ -191,6 +243,8 @@
             ((System.ComponentModel.ISupportInitialize)userPictureBox).EndInit();
             navigationTablePanel.ResumeLayout(false);
             navigationalPanel.ResumeLayout(false);
+            mainFunctionPanel.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -205,5 +259,8 @@
         private Button customersButton;
         private Button dashBoardButton;
         private Button ordersButton;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button closeApp;
+        private Button minimiseApp;
     }
 }

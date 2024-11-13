@@ -189,7 +189,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1520, 786);
             Controls.Add(tableLayoutPanel1);
-            Location = new Point(0, 0);
             Margin = new Padding(2, 1, 2, 1);
             MinimumSize = new Size(300, 450);
             Name = "LoginForm";

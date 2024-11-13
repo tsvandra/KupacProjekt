@@ -32,12 +32,16 @@ namespace Kupac
         private void InitializeComponent()
         {
 
+            // 
+            // customerDataGridView
+            // 
             customerDataGridView = new CustomDataGridView();
             customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             customerDataGridView.Location = new Point(61, 157);
             customerDataGridView.Name = "customerDataGridView";
-            customerDataGridView.Size = new Size(652, 260);
+            customerDataGridView.Size = new Size(852, 260);
             customerDataGridView.TabIndex = 21;
+            //
             components = new System.ComponentModel.Container();
             menoLabel = new Label();
             priezviskoLabel = new Label();
@@ -262,14 +266,6 @@ namespace Kupac
             // customerManagerBindingSource
             // 
             customerManagerBindingSource.DataSource = typeof(AdatbazisTablak.CustomerManager);
-            // 
-            // customerDataGridView
-            // 
-            customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            customerDataGridView.Location = new Point(61, 157);
-            customerDataGridView.Name = "customerDataGridView";
-            customerDataGridView.Size = new Size(652, 260);
-            customerDataGridView.TabIndex = 21;
             // 
             // CustomersEditorForm
             // 
