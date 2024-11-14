@@ -31,18 +31,11 @@ namespace Kupac
         /// </summary>
         private void InitializeComponent()
         {
-
-            // 
-            // customerDataGridView
-            // 
-            customerDataGridView = new CustomDataGridView();
-            customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            customerDataGridView.Location = new Point(61, 157);
-            customerDataGridView.Name = "customerDataGridView";
-            customerDataGridView.Size = new Size(852, 260);
-            customerDataGridView.TabIndex = 21;
-            //
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            customerDataGridView = new CustomDataGridView();
             menoLabel = new Label();
             priezviskoLabel = new Label();
             EmailLabel = new Label();
@@ -64,11 +57,37 @@ namespace Kupac
             button1 = new Button();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
-            //customerDataGridView = new CustomDataGridView();
+            ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             SuspendLayout();
+            // 
+            // customerDataGridView
+            // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
+            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            customerDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            customerDataGridView.BorderStyle = BorderStyle.None;
+            customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 68, 90);
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerDataGridView.EnableHeadersVisualStyles = false;
+            customerDataGridView.GridColor = Color.LightGray;
+            customerDataGridView.Location = new Point(61, 157);
+            customerDataGridView.Name = "customerDataGridView";
+            customerDataGridView.ReadOnly = true;
+            customerDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            customerDataGridView.Size = new Size(1129, 260);
+            customerDataGridView.TabIndex = 21;
             // 
             // menoLabel
             // 
@@ -297,9 +316,9 @@ namespace Kupac
             Name = "CustomersEditorForm";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)customerDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)customerDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,4 +1,4 @@
-using Kupac.AdatbazisTablak;
+﻿using Kupac.AdatbazisTablak;
 using Kupac.DbContexts;
 using Kupac.UI.Shared;
 using Kupac.UI.Shared.BaseClasses;
@@ -43,7 +43,7 @@ namespace Kupac
                 context.Customers.Add(customer);
                 context.SaveChanges();
 
-                MessageBox.Show("Uzivatel bol uspesne pridan�");
+                MessageBox.Show("Uzivatel bol uspesne pridaný");
                 _customerManager.LoadCustomersFromDatabase(context);
                 var customers = context.Customers.ToList();
 
@@ -204,22 +204,73 @@ namespace Kupac
 
             if (customerDataGridView.Columns["FirstName"] != null)
             {
-                customerDataGridView.Columns["FirstName"].HeaderText = "Keresztn�v";
+                var firstNameColumn = customerDataGridView.Columns["FirstName"];
+                firstNameColumn.HeaderText = "Keresztnév";
+                firstNameColumn.MinimumWidth = GetHeaderTextWidth(firstNameColumn);
+                firstNameColumn.Width = GetOptimalColumnWidth(firstNameColumn);
+                firstNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             }
 
             if (customerDataGridView.Columns["LastName"] != null)
             {
-                customerDataGridView.Columns["LastName"].HeaderText = "Vezet�kn�v";
+                var lastNameColumn = customerDataGridView.Columns["LastName"];
+                lastNameColumn.HeaderText = "Vezetéknév";
+                lastNameColumn.MinimumWidth= GetHeaderTextWidth(lastNameColumn);
+                lastNameColumn.Width = GetOptimalColumnWidth(lastNameColumn);
+                lastNameColumn.AutoSizeMode= DataGridViewAutoSizeColumnMode.None;
+
             }
 
             if (customerDataGridView.Columns["Email"] != null)
             {
-                customerDataGridView.Columns["Email"].HeaderText = "Email c�m";
+                customerDataGridView.Columns["Email"].HeaderText = "Email cím";
             }
 
             if (customerDataGridView.Columns["MobilPhone"] != null)
             {
                 customerDataGridView.Columns["MobilPhone"].HeaderText = "Mobiltelefon";
+            }
+        }
+
+        private int GetHeaderTextWidth(DataGridViewColumn column)
+        {
+            using (Graphics g = customerDataGridView.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(column.HeaderText, customerDataGridView.Font);
+                return (int)(textSize.Width * 1.5) + 10;
+            }
+        }
+
+        private int GetOptimalColumnWidth(DataGridViewColumn column)
+        {
+            // Kiszámítja az optimális szélességet a fejléchez és az első néhány adat sorhoz igazítva
+            using (Graphics g = customerDataGridView.CreateGraphics())
+            {
+                // Mérjük meg a fejléc szélességét
+                SizeF headerSize = g.MeasureString(column.HeaderText, customerDataGridView.Font);
+
+                // Vegyük figyelembe az első néhány cella szélességét is
+                float maxWidth = headerSize.Width;
+
+                foreach (DataGridViewRow row in customerDataGridView.Rows)
+                {
+                    if (row.Cells[column.Index].Value != null)
+                    {
+                        SizeF cellSize = g.MeasureString(row.Cells[column.Index].Value.ToString(), customerDataGridView.Font);
+                        maxWidth = Math.Max(maxWidth, cellSize.Width);
+                    }
+                }
+
+                var headerWidth = GetHeaderTextWidth(column);
+                if (headerWidth > ((int)maxWidth + 20))
+                {
+                    return headerWidth;
+                }
+                // Biztonsági tartalék hozzáadása és kerekítés egész számra
+                else
+                {
+                    return (int)maxWidth + 20;
+                }
             }
         }
 
