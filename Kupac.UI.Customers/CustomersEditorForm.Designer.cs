@@ -39,9 +39,11 @@ namespace Kupac
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
             addNewCustomerButton = new Button();
+            loadingPictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loadingPictureBox).BeginInit();
             SuspendLayout();
             // 
             // customerDataGridView
@@ -94,12 +96,24 @@ namespace Kupac
             addNewCustomerButton.UseVisualStyleBackColor = false;
             addNewCustomerButton.Click += addNewCustomerButton_Click;
             // 
+            // loadingPictureBox
+            // 
+            loadingPictureBox.Location = new Point(600, 271);
+            loadingPictureBox.Name = "loadingPictureBox";
+            loadingPictureBox.Size = new Size(140, 21);
+            loadingPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            loadingPictureBox.Image = Image.FromFile("C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Resources\\main\\Fountain2.gif");
+            loadingPictureBox.TabIndex = 23;
+            loadingPictureBox.TabStop = false;
+            loadingPictureBox.Visible = false;
+            // 
             // CustomersEditorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1249, 584);
+            Controls.Add(loadingPictureBox);
             Controls.Add(addNewCustomerButton);
             Controls.Add(customerDataGridView);
             Margin = new Padding(2, 1, 2, 1);
@@ -109,6 +123,7 @@ namespace Kupac
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loadingPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -116,6 +131,7 @@ namespace Kupac
         private BindingSource customerManagerBindingSource1;
         private BindingSource customerManagerBindingSource;
         private Button addNewCustomerButton;
+        private PictureBox loadingPictureBox;
         //private CustomDataGridView customerDataGridView;
     }
 }

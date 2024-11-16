@@ -29,11 +29,11 @@ namespace Kupac
             using (var context = new CapillarContext())
             {
 
-                _customerManager.LoadCustomersFromDatabase(context);
-                var customers = context.Customers.ToList();
+               // _customerManager.LoadCustomersFromDatabase(context);
+               // var customers = context.Customers.ToList();
 
-                customerDataGridView.DataSource = customers;
-
+               // customerDataGridView.DataSource = customers;
+                RefreshGrid();
                 CustomizeColumns();
             }
 
@@ -161,15 +161,36 @@ namespace Kupac
             //}
         }
 
-        public void RefreshGrid()
+        public async void RefreshGrid()
         {
-            using (var context = new CapillarContext())
+            try
             {
-                _customerManager.LoadCustomersFromDatabase(context);
+                // Betöltési animáció megjelenítése
+                loadingPictureBox.Visible = true;
+
+                await Task.Run(() =>
+                {
+                    using (var context = new CapillarContext())
+                    {
+                        _customerManager.LoadCustomersFromDatabase(context);
+                    }
+                });
+
+                // Adatok frissítése
                 customerDataGridView.DataSource = null;
                 customerDataGridView.DataSource = _customerManager.GetCustomers();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hiba történt az adatok betöltésekor: {ex.Message}");
+            }
+            finally
+            {
+                // Betöltési animáció elrejtése
+                loadingPictureBox.Visible = false;
+            }
         }
+
     }
 
 
