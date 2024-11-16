@@ -28,11 +28,6 @@ namespace Kupac
             
             using (var context = new CapillarContext())
             {
-
-               // _customerManager.LoadCustomersFromDatabase(context);
-               // var customers = context.Customers.ToList();
-
-               // customerDataGridView.DataSource = customers;
                 RefreshGrid();
                 CustomizeColumns();
             }
@@ -126,39 +121,9 @@ namespace Kupac
             {
                 addForm.CustomerAdded += RefreshGrid;
                 addForm.ShowDialog();
-                //addForm.CustomerAdded -= RefreshGrid;
+                
             }
 
-            //using (var addForm = new CustomerAddForm())
-            //{
-            //    if (addForm.ShowDialog() == DialogResult.OK)
-            //    {
-            //        using (var context = new CapillarContext())
-            //        {
-            //            customersEditorForm?.CustomerManager.LoadCustomersFromDatabase(context);
-            //            customersEditorForm?.RefreshGrid();                        
-                        
-                        
-            //            //16.11.2024
-            //            //_customerManager.LoadCustomersFromDatabase(context);
-            //            //customerDataGridView.DataSource = null;
-            //            //customerDataGridView.DataSource = _customerManager.ListCustomers();
-            //            //16.11.2024
-                        
-                        
-                        
-                        
-            //            // Példa: új ügyfél adatainak mentése, ha az ablak OK gombbal záródik.
-
-            //            // customerManager.AddCustomer(newCustomer);
-
-            //            // customerDataGridView.DataSource = customerManager.GetAllCustomers();
-
-            //            //var newCustomer = addForm.NewCustomer; // Az új ablakban definiált tulajdonság.
-            //            //customerDataGridView.DataSource = null;
-            //        }
-            //    }
-            //}
         }
 
         public async void RefreshGrid()
