@@ -29,18 +29,12 @@ namespace Kupac.AdatbazisTablak
             }
         }
 
-        public string ListCustomers()
+        public List<Customer> GetCustomers()
         {
-            var sortedCustomers = customers.OrderByDescending(c => c.LastName).ToList();
-            string result = string.Join(Environment.NewLine, sortedCustomers.Select (customer =>
-                    $"ID: {customer.Id}, " +
-                    $"Vezeteknev: {customer.LastName}, " +
-                    $"Név: {customer.FirstName}, " +
-                    $"Email: {customer.Email}, " +
-                    $"MobilPhone: {customer.MobilPhone}"));
-
-            return result;
+            return customers.OrderByDescending(c => c.LastName).ToList();
         }
+
+
 
         public void LoadCustomersFromDatabase(CapillarContext context)
         {

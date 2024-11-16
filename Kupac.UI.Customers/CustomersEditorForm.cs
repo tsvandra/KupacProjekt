@@ -1,4 +1,4 @@
-﻿using Kupac.AdatbazisTablak;
+using Kupac.AdatbazisTablak;
 using Kupac.DbContexts;
 using Kupac.UI.Customers;
 using Kupac.UI.Shared;
@@ -126,7 +126,7 @@ namespace Kupac
             {
                 addForm.CustomerAdded += RefreshGrid;
                 addForm.ShowDialog();
-                addForm.CustomerAdded -= RefreshGrid;
+                //addForm.CustomerAdded -= RefreshGrid;
             }
 
             //using (var addForm = new CustomerAddForm())
@@ -163,8 +163,12 @@ namespace Kupac
 
         public void RefreshGrid()
         {
-            customerDataGridView.DataSource = null;
-            customerDataGridView.DataSource = _customerManager.ListCustomers();
+            using (var context = new CapillarContext())
+            {
+                _customerManager.LoadCustomersFromDatabase(context);
+                customerDataGridView.DataSource = null;
+                customerDataGridView.DataSource = _customerManager.GetCustomers();
+            }
         }
     }
 
