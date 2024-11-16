@@ -62,7 +62,7 @@
             mainPanel.Margin = new Padding(0);
             mainPanel.Name = "mainPanel";
             mainPanel.RowCount = 3;
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
             mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             mainPanel.Size = new Size(1480, 736);
@@ -76,7 +76,7 @@
             userPictureBox.Location = new Point(0, 0);
             userPictureBox.Margin = new Padding(0);
             userPictureBox.Name = "userPictureBox";
-            userPictureBox.Size = new Size(200, 200);
+            userPictureBox.Size = new Size(200, 150);
             userPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             userPictureBox.TabIndex = 2;
             userPictureBox.TabStop = false;
@@ -87,14 +87,14 @@
             navigationTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             navigationTablePanel.Controls.Add(navigationalPanel, 0, 0);
             navigationTablePanel.Dock = DockStyle.Fill;
-            navigationTablePanel.Location = new Point(0, 203);
+            navigationTablePanel.Location = new Point(0, 153);
             navigationTablePanel.Margin = new Padding(0, 3, 0, 0);
             navigationTablePanel.Name = "navigationTablePanel";
             navigationTablePanel.RowCount = 3;
             navigationTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             navigationTablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             navigationTablePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            navigationTablePanel.Size = new Size(200, 425);
+            navigationTablePanel.Size = new Size(200, 465);
             navigationTablePanel.TabIndex = 0;
             // 
             // navigationalPanel
@@ -172,7 +172,7 @@
             mainFunctionPanel.RowCount = 2;
             mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 22.1649475F));
             mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 77.83505F));
-            mainFunctionPanel.Size = new Size(1274, 194);
+            mainFunctionPanel.Size = new Size(1274, 144);
             mainFunctionPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -187,7 +187,7 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(54, 37);
+            tableLayoutPanel1.Size = new Size(54, 25);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // minimiseApp
@@ -200,7 +200,7 @@
             minimiseApp.ForeColor = SystemColors.ControlText;
             minimiseApp.Location = new Point(3, 3);
             minimiseApp.Name = "minimiseApp";
-            minimiseApp.Size = new Size(21, 23);
+            minimiseApp.Size = new Size(21, 19);
             minimiseApp.TabIndex = 3;
             minimiseApp.Text = "_";
             minimiseApp.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             closeApp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             closeApp.Location = new Point(30, 3);
             closeApp.Name = "closeApp";
-            closeApp.Size = new Size(21, 23);
+            closeApp.Size = new Size(21, 19);
             closeApp.TabIndex = 2;
             closeApp.Text = "X";
             closeApp.UseVisualStyleBackColor = false;
@@ -224,10 +224,10 @@
             // mainInformationPanel
             // 
             mainInformationPanel.Dock = DockStyle.Fill;
-            mainInformationPanel.Location = new Point(200, 203);
+            mainInformationPanel.Location = new Point(200, 153);
             mainInformationPanel.Margin = new Padding(0, 3, 0, 0);
             mainInformationPanel.Name = "mainInformationPanel";
-            mainInformationPanel.Size = new Size(1280, 425);
+            mainInformationPanel.Size = new Size(1280, 465);
             mainInformationPanel.TabIndex = 3;
             // 
             // MainForm

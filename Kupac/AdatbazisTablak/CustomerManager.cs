@@ -46,5 +46,7 @@ namespace Kupac.AdatbazisTablak
         {
             customers = context.Customers.OrderBy(c => c.LastName).ToList();
         }
+
+
     }
 }

@@ -14,14 +14,22 @@ namespace Kupac.UI.Main
 {
     public partial class MainForm : BaseForm
     {
+        private CustomersEditorForm customersEditorForm;
+        private Button previousButton = null;
+        
+        //inicializacio
         public MainForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private Button previousButton = null;
+        //form load
 
+        // gombok szinenek beallitasa
+        //              ---- TODO ----
+        //     kesobb kiemelni, hogy egyseges legyen mindenhol
+        //              ---- TODO ----
         private void SetButtonColor(Button currentButton, Color activeColor)
         {
             // Az előző gomb visszaállítása az eredeti színre
@@ -47,7 +55,8 @@ namespace Kupac.UI.Main
             // Előzőleg betöltött form bezárása, ha van
             if (this.mainInformationPanel.Controls.Count > 0)
             {
-                this.mainInformationPanel.Controls[0].Dispose();
+                this.mainInformationPanel.Controls[0].Hide();
+                this.mainInformationPanel.Controls.Clear();
             }
 
             // Új form betöltése a panelbe
@@ -68,13 +77,27 @@ namespace Kupac.UI.Main
 
         private void customersButton_Click(object sender, EventArgs e)
         {
-            LoadFormIntoPanel(new CustomersEditorForm());
+            if (customersEditorForm == null || customersEditorForm.IsDisposed)
+            { 
+                customersEditorForm = new CustomersEditorForm();
+            }
+
+            LoadFormIntoPanel(customersEditorForm);
             SetButtonColor(customersButton, Color.AntiqueWhite);
+        }
+
+        public void RefreshCustomerGrid()
+        {
+            if (customersEditorForm != null && !customersEditorForm.IsDisposed)
+            {
+                customersEditorForm.RefreshGrid();
+            }
         }
 
         private void minimiseApp_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
         private void closeApp_Click(object sender, EventArgs e) => Application.Exit();
+
         
     }
 }
