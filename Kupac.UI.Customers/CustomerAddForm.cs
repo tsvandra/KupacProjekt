@@ -20,10 +20,34 @@ namespace Kupac.UI.Customers
         private const string defaultState = "SK";
         private const string defaultAddress = "utca";
 
+        private bool isEditMode;
+        private Customer editingCustomer;
+
         public event Action CustomerAdded;
         public CustomerAddForm()
         {
             InitializeComponent();
+        }
+
+        public CustomerAddForm(bool isEditMode = false, Customer customer = null)
+        {
+            InitializeComponent();
+            this.isEditMode = isEditMode;
+            this.editingCustomer = customer;
+
+            if (isEditMode && customer != null)
+            {
+                // Töltsd be a meglévő ügyfél adatait
+                nameTextbox.Text = customer.FirstName;
+                priezviskoTextBox.Text = customer.LastName;
+                emailTextBox.Text = customer.Email;
+                mobilPhoneTextBox.Text = customer.MobilPhone;
+                addressTextBox.Text = customer.Address;
+                cityTextBox.Text = customer.City;
+                postalCodeTextBox.Text = customer.PostalCode;
+                stateTextBox.Text = customer.Country;
+                phoneTextBox.Text = customer.Phone;
+            }
         }
 
         public Customer NewCustomer { get; private set; }
@@ -183,25 +207,47 @@ namespace Kupac.UI.Customers
                     return;
                 }
 
-
-                var customer = new Customer
+                if (isEditMode)
                 {
-                    FirstName = nameTextbox.Text,
-                    LastName = priezviskoTextBox.Text,
-                    Email = emailTextBox.Text,
-                    MobilPhone = mobilPhoneTextBox.Text,
-                    Address = addressTextBox.Text,
-                    City = cityTextBox.Text,
-                    PostalCode = postalCodeTextBox.Text,
-                    Country = stateTextBox.Text,
-                    Phone = phoneTextBox.Text,
-                };
-                context.Customers.Add(customer);
-                context.SaveChanges();
+                    var customer = context.Customers.Find(editingCustomer.Id);
+                    if (customer != null)
+                    {
+                        customer.FirstName = nameTextbox.Text;
+                        customer.LastName = priezviskoTextBox.Text;
+                        customer.Email = emailTextBox.Text;
+                        customer.MobilPhone = mobilPhoneTextBox.Text;
+                        customer.Address = addressTextBox.Text;
+                        customer.City = cityTextBox.Text;
+                        customer.PostalCode = postalCodeTextBox.Text;
+                        customer.Country = stateTextBox.Text;
+                        customer.Phone = phoneTextBox.Text;
 
-                CustomerAdded?.Invoke();
-                this.Close();
-                MessageBox.Show($"Az új ügyfél {customer.LastName} {customer.FirstName} sikeresen hozzáadva");
+                        context.SaveChanges();
+                        MessageBox.Show("Az ügyfél sikeresen frissítve.");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var customer = new Customer
+                    {
+                        FirstName = nameTextbox.Text,
+                        LastName = priezviskoTextBox.Text,
+                        Email = emailTextBox.Text,
+                        MobilPhone = mobilPhoneTextBox.Text,
+                        Address = addressTextBox.Text,
+                        City = cityTextBox.Text,
+                        PostalCode = postalCodeTextBox.Text,
+                        Country = stateTextBox.Text,
+                        Phone = phoneTextBox.Text,
+                    };
+                    context.Customers.Add(customer);
+                    context.SaveChanges();
+
+                    CustomerAdded?.Invoke();
+                    MessageBox.Show($"Az új ügyfél {customer.LastName} {customer.FirstName} sikeresen hozzáadva");
+                    this.Close();
+                }
             }
         }
 

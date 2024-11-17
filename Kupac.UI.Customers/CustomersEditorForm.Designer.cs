@@ -73,6 +73,7 @@ namespace Kupac
             customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             customerDataGridView.Size = new Size(1129, 393);
             customerDataGridView.TabIndex = 21;
+            customerDataGridView.CellDoubleClick += customerDataGridView_CellDoubleClick;
             // 
             // customerManagerBindingSource1
             // 

@@ -25,7 +25,7 @@ namespace Kupac
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             using (var context = new CapillarContext())
             {
                 RefreshGrid();
@@ -121,7 +121,7 @@ namespace Kupac
             {
                 addForm.CustomerAdded += RefreshGrid;
                 addForm.ShowDialog();
-                
+
             }
 
         }
@@ -156,6 +156,28 @@ namespace Kupac
             }
         }
 
+        private void customerDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Az ügyfél ID-jének lekérése
+                int customerId = (int)customerDataGridView.Rows[e.RowIndex].Cells["ID"].Value;
+
+                using (var context = new CapillarContext())
+                {
+                    var customer = context.Customers.Find(customerId);
+                    if (customer != null)
+                    {
+                        // Nyisd meg a CustomerAddForm-ot szerkesztési módban
+                        using (var editForm = new CustomerAddForm(true, customer))
+                        {
+                            editForm.ShowDialog();
+                            RefreshGrid(); // Frissítsd az adatokat
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
