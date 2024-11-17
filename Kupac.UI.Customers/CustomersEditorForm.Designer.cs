@@ -35,6 +35,7 @@ namespace Kupac
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersEditorForm));
             customerDataGridView = new CustomDataGridView();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
@@ -98,11 +99,11 @@ namespace Kupac
             // 
             // loadingPictureBox
             // 
-            loadingPictureBox.Location = new Point(600, 271);
+            loadingPictureBox.Image = (Image)resources.GetObject("loadingPictureBox.Image");
+            loadingPictureBox.Location = new Point(543, 238);
             loadingPictureBox.Name = "loadingPictureBox";
             loadingPictureBox.Size = new Size(140, 21);
             loadingPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            loadingPictureBox.Image = Image.FromFile("C:\\Users\\tsvan\\source\\repos\\tsvandra\\KupacProjekt\\Kupac\\Resources\\main\\Fountain2.gif");
             loadingPictureBox.TabIndex = 23;
             loadingPictureBox.TabStop = false;
             loadingPictureBox.Visible = false;

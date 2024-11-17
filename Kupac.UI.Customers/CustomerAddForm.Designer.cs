@@ -46,8 +46,8 @@
             priezviskoTextBox = new TextBox();
             EmailLabel = new Label();
             priezviskoLabel = new Label();
-            button1 = new Button();
-            button3 = new Button();
+            addCustomer = new Button();
+            closeButton = new Button();
             SuspendLayout();
             // 
             // nameTextbox
@@ -93,6 +93,8 @@
             postalCodeTextBox.Name = "postalCodeTextBox";
             postalCodeTextBox.Size = new Size(135, 23);
             postalCodeTextBox.TabIndex = 33;
+            postalCodeTextBox.Enter += postalCodeTextBox_Enter;
+            postalCodeTextBox.Leave += postalCodeTextBox_Leave;
             // 
             // phoneLabel
             // 
@@ -224,44 +226,44 @@
             priezviskoLabel.TabIndex = 20;
             priezviskoLabel.Text = "Vezetéknév";
             // 
-            // button1
+            // addCustomer
             // 
-            button1.BackColor = Color.Plum;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(319, 204);
-            button1.Margin = new Padding(2, 1, 2, 1);
-            button1.Name = "button1";
-            button1.Size = new Size(178, 56);
-            button1.TabIndex = 36;
-            button1.Text = "Hozzáadás";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            addCustomer.BackColor = Color.Plum;
+            addCustomer.Cursor = Cursors.Hand;
+            addCustomer.FlatAppearance.BorderSize = 0;
+            addCustomer.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            addCustomer.ForeColor = Color.White;
+            addCustomer.Location = new Point(319, 204);
+            addCustomer.Margin = new Padding(2, 1, 2, 1);
+            addCustomer.Name = "addCustomer";
+            addCustomer.Size = new Size(178, 56);
+            addCustomer.TabIndex = 36;
+            addCustomer.Text = "Hozzáadás";
+            addCustomer.UseVisualStyleBackColor = false;
+            addCustomer.Click += addCustomer_Click;
             // 
-            // button3
+            // closeButton
             // 
-            button3.Anchor = AnchorStyles.Top;
-            button3.BackColor = Color.Thistle;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button3.Location = new Point(538, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(18, 23);
-            button3.TabIndex = 38;
-            button3.Text = "X";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            closeButton.Anchor = AnchorStyles.Top;
+            closeButton.BackColor = Color.Thistle;
+            closeButton.FlatAppearance.BorderSize = 0;
+            closeButton.FlatStyle = FlatStyle.Flat;
+            closeButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            closeButton.Location = new Point(538, 3);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(18, 23);
+            closeButton.TabIndex = 38;
+            closeButton.Text = "X";
+            closeButton.UseVisualStyleBackColor = false;
+            closeButton.Click += closeButton_Click;
             // 
             // CustomerAddForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(568, 309);
-            Controls.Add(button3);
-            Controls.Add(button1);
+            Controls.Add(closeButton);
+            Controls.Add(addCustomer);
             Controls.Add(phoneTextBox);
             Controls.Add(stateTextBox);
             Controls.Add(postalCodeTextBox);
@@ -307,7 +309,7 @@
         private TextBox priezviskoTextBox;
         private Label EmailLabel;
         private Label priezviskoLabel;
-        private Button button1;
-        private Button button3;
+        private Button addCustomer;
+        private Button closeButton;
     }
 }

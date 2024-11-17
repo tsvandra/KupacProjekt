@@ -1,4 +1,4 @@
-using Kupac.AdatbazisTablak;
+﻿using Kupac.AdatbazisTablak;
 using Kupac.DbContexts;
 using Kupac.UI.Shared;
 using Kupac.UI.Shared.BaseClasses;
@@ -10,7 +10,16 @@ namespace Kupac.UI.Customers
 {
     public partial class CustomerAddForm : BaseForm
     {
-        private const string defaultText = "Addj meg egy �rt�ket";
+        private const string defaultName = "Keresztnév";
+        private const string defaultLastName = "Vezetéknév";
+        private const string defaultMail = "@";
+        private const string defaultText = "Addj meg egy értéket";
+        private const string defaultCity = "Horná Potôň";
+        private const string defaultPostalCode = "930 36";
+        private const string defaultPhone = "+421";
+        private const string defaultState = "SK";
+        private const string defaultAddress = "utca";
+
         public event Action CustomerAdded;
         public CustomerAddForm()
         {
@@ -19,55 +28,32 @@ namespace Kupac.UI.Customers
 
         public Customer NewCustomer { get; private set; }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var context = new CapillarContext())
-            {
-                var customer = new Customer
-                {
-                    FirstName = nameTextbox.Text,
-                    LastName = priezviskoTextBox.Text,
-                    Email = emailTextBox.Text,
-                    MobilPhone = mobilPhoneTextBox.Text
-                };
-                context.Customers.Add(customer);
-                context.SaveChanges();
-
-                CustomerAdded?.Invoke();
-                this.Close();
-                MessageBox.Show("Uzivatel bol uspesne pridan�");
-                //_customerManager.LoadCustomersFromDatabase(context);
-                //var customers = context.Customers.ToList();
-
-                //customerDataGridView.DataSource = customers;
-            }
-        }
-
         private void CustomerAddForm_Load(object sender, EventArgs e)
         {
-            nameTextbox.Text = defaultText;
+            nameTextbox.Text = defaultName;
             nameTextbox.ForeColor = Color.Gray;
-            priezviskoTextBox.Text = defaultText;
+            priezviskoTextBox.Text = defaultLastName;
             priezviskoTextBox.ForeColor = Color.Gray;
-            emailTextBox.Text = defaultText;
+            emailTextBox.Text = defaultMail;
             emailTextBox.ForeColor = Color.Gray;
-            mobilPhoneTextBox.Text = "+421";
+            mobilPhoneTextBox.Text = defaultPhone;
             mobilPhoneTextBox.ForeColor = Color.Gray;
-            addressTextBox.Text = defaultText;
+            addressTextBox.Text = defaultAddress;
             addressTextBox.ForeColor = Color.Gray;
-            cityTextBox.Text = defaultText;
+            cityTextBox.Text = defaultCity;
             cityTextBox.ForeColor = Color.Gray;
+            postalCodeTextBox.Text = defaultPostalCode;
+            postalCodeTextBox.ForeColor = Color.Gray;
+            phoneTextBox.Text = defaultPhone;
+            phoneTextBox.ForeColor = Color.Gray;
+            stateTextBox.Text = defaultState;
+            stateTextBox.ForeColor = Color.Gray;
         }
 
 
         private void nameTextbox_Enter(object sender, EventArgs e)
         {
-            if (nameTextbox.Text == defaultText)
+            if (nameTextbox.Text == defaultName)
             {
                 nameTextbox.ForeColor = Color.Black;
                 nameTextbox.Text = "";
@@ -79,7 +65,7 @@ namespace Kupac.UI.Customers
         {
             if (string.IsNullOrWhiteSpace(nameTextbox.Text))
             {
-                nameTextbox.Text = defaultText;
+                nameTextbox.Text = defaultName;
                 nameTextbox.ForeColor = Color.Gray;
             }
 
@@ -87,7 +73,7 @@ namespace Kupac.UI.Customers
 
         private void priezviskoTextBox_Enter(object sender, EventArgs e)
         {
-            if (priezviskoTextBox.Text == defaultText)
+            if (priezviskoTextBox.Text == defaultLastName)
             {
                 priezviskoTextBox.ForeColor = Color.Black;
                 priezviskoTextBox.Text = "";
@@ -99,52 +85,52 @@ namespace Kupac.UI.Customers
         {
             if (string.IsNullOrWhiteSpace(priezviskoTextBox.Text))
             {
-                priezviskoTextBox.Text = defaultText;
+                priezviskoTextBox.Text = defaultLastName;
                 priezviskoTextBox.ForeColor = Color.Gray;
             }
         }
 
         private void emailTextBox_Enter(object sender, EventArgs e)
         {
-            if (emailTextBox.Text == defaultText)
+            if (emailTextBox.Text == defaultMail)
             {
                 emailTextBox.ForeColor = Color.Black;
-                emailTextBox.Text = "";
+                emailTextBox.Text = "@";
 
             }
         }
 
         private void emailTextBox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(emailTextBox.Text))
+            if (string.IsNullOrWhiteSpace(emailTextBox.Text) || emailTextBox.Text == "@")
             {
-                emailTextBox.Text = defaultText;
+                emailTextBox.Text = defaultMail;
                 emailTextBox.ForeColor = Color.Gray;
             }
         }
 
         private void mobilPhoneTextBox_Enter(object sender, EventArgs e)
         {
-            if (mobilPhoneTextBox.Text == "+421")
+            if (mobilPhoneTextBox.Text == defaultPhone)
             {
                 mobilPhoneTextBox.ForeColor = Color.Black;
-                mobilPhoneTextBox.Text = "";
+                mobilPhoneTextBox.Text = defaultPhone;
 
             }
         }
 
         private void mobilPhoneTextBox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(mobilPhoneTextBox.Text))
+            if (string.IsNullOrWhiteSpace(mobilPhoneTextBox.Text) || mobilPhoneTextBox.Text == defaultPhone)
             {
-                mobilPhoneTextBox.Text = "+421";
+                mobilPhoneTextBox.Text = defaultPhone;
                 mobilPhoneTextBox.ForeColor = Color.Gray;
             }
         }
 
         private void addressTextBox_Enter(object sender, EventArgs e)
         {
-            if (addressTextBox.Text == defaultText)
+            if (addressTextBox.Text == defaultAddress)
             {
                 addressTextBox.ForeColor = Color.Black;
                 addressTextBox.Text = "";
@@ -156,14 +142,14 @@ namespace Kupac.UI.Customers
         {
             if (string.IsNullOrWhiteSpace(addressTextBox.Text))
             {
-                addressTextBox.Text = defaultText;
+                addressTextBox.Text = defaultAddress;
                 addressTextBox.ForeColor = Color.Gray;
             }
         }
 
         private void CityTextBox_Enter(object sender, EventArgs e)
         {
-            if (cityTextBox.Text == defaultText)
+            if (cityTextBox.Text == defaultCity)
             {
                 cityTextBox.ForeColor = Color.Black;
                 cityTextBox.Text = "";
@@ -175,10 +161,104 @@ namespace Kupac.UI.Customers
         {
             if (string.IsNullOrWhiteSpace(cityTextBox.Text))
             {
-                cityTextBox.Text = defaultText;
+                cityTextBox.Text = defaultCity;
                 cityTextBox.ForeColor = Color.Gray;
             }
         }
 
+        private void addCustomer_Click(object sender, EventArgs e)
+        {
+            if (!ValidateFields())
+            {
+                return;
+            }
+
+            using (var context = new CapillarContext())
+            {
+                string phoneNumber = mobilPhoneTextBox.Text;
+
+                if (IsPhoneNumberDuplicated(phoneNumber, context))
+                {
+                    MessageBox.Show("Az adott mobiltelefonszám már létezik az adatbázisban.");
+                    return;
+                }
+
+
+                var customer = new Customer
+                {
+                    FirstName = nameTextbox.Text,
+                    LastName = priezviskoTextBox.Text,
+                    Email = emailTextBox.Text,
+                    MobilPhone = mobilPhoneTextBox.Text,
+                    Address = addressTextBox.Text,
+                    City = cityTextBox.Text,
+                    PostalCode = postalCodeTextBox.Text,
+                    Country = stateTextBox.Text,
+                    Phone = phoneTextBox.Text,
+                };
+                context.Customers.Add(customer);
+                context.SaveChanges();
+
+                CustomerAdded?.Invoke();
+                this.Close();
+                MessageBox.Show($"Az új ügyfél {customer.LastName} {customer.FirstName} sikeresen hozzáadva");
+            }
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void postalCodeTextBox_Enter(object sender, EventArgs e)
+        {
+            if (postalCodeTextBox.Text == defaultPostalCode)
+            {
+                postalCodeTextBox.ForeColor = Color.Black;
+                postalCodeTextBox.Text = "";
+
+            }
+        }
+
+        private void postalCodeTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(postalCodeTextBox.Text))
+            {
+                postalCodeTextBox.Text = defaultPostalCode;
+                postalCodeTextBox.ForeColor = Color.Gray;
+            }
+        }
+
+
+        private bool ValidateFields()
+        {
+            if (string.IsNullOrWhiteSpace(nameTextbox.Text) || nameTextbox.Text == defaultName)
+            {
+                MessageBox.Show("A keresztnevet meg kell adni!");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(priezviskoTextBox.Text) || priezviskoTextBox.Text == defaultLastName)
+            {
+                MessageBox.Show("A vezetéknevet meg kell adni!");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(mobilPhoneTextBox.Text) || mobilPhoneTextBox.Text == defaultPhone)
+            {
+                MessageBox.Show("A telefonszámot meg kell adni!");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsPhoneNumberDuplicated(string phoneNumber, CapillarContext context)
+        {
+            if (phoneNumber == defaultPhone) 
+                return false;
+
+            return context.Customers.Any(c => c.MobilPhone == phoneNumber);
+        }
     }
 }
