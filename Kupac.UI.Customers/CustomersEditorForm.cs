@@ -5,6 +5,7 @@ using Kupac.UI.Shared;
 using Kupac.UI.Shared.BaseClasses;
 using System;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace Kupac
@@ -160,22 +161,34 @@ namespace Kupac
         {
             if (e.RowIndex >= 0)
             {
-                // Az ügyfél ID-jének lekérése
-                int customerId = (int)customerDataGridView.Rows[e.RowIndex].Cells["ID"].Value;
-
-                using (var context = new CapillarContext())
+                try
                 {
-                    var customer = context.Customers.Find(customerId);
-                    if (customer != null)
+                    // Az ügyfél ID-jének lekérése
+                    int customerId = Convert.ToInt32(customerDataGridView.Rows[e.RowIndex].Cells["ID"].Value);
+
+                    using (var context = new CapillarContext())
                     {
-                        // Nyisd meg a CustomerAddForm-ot szerkesztési módban
-                        using (var editForm = new CustomerAddForm(true, customer))
+                        var customer = context.Customers.Find(customerId);
+                        if (customer != null)
                         {
-                            editForm.ShowDialog();
-                            RefreshGrid(); // Frissítsd az adatokat
+                            // Nyisd meg a CustomerAddForm-ot szerkesztési módban
+                            using (var editForm = new CustomerAddForm(true, customer))
+                            {
+                                editForm.CustomerAdded += RefreshGrid;
+                                editForm.ShowDialog();
+                                RefreshGrid(); // Frissítsd az adatokat
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Az ugyfel nem talalhato az adatbazisban");
                         }
                     }
                 }
+                catch (Exception ex)
+                 {
+                     MessageBox.Show($"Hiba tortent: {ex.Message}");
+                 }
             }
         }
     }
