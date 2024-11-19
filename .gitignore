@@ -377,3 +377,4 @@ FodyWeavers.xsd
 /Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.AssemblyInfoInputs.cache
 /Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.assets.cache
 /Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.GeneratedMSBuildEditorConfig.editorconfig
+/Kupac.UI.Main/MainForm.resx
