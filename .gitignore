@@ -363,3 +363,17 @@ MigrationBackup/
 FodyWeavers.xsd
 /Kupac.UI.Main/obj/Debug/net8.0-windows/ref/Kupac.UI.Main.dll
 /Kupac.UI.Main/obj/Debug/net8.0-windows/refint/Kupac.UI.Main.dll
+/.vs/KupacProjekt/v17/.wsuo
+/.vs/KupacProjekt/v17/DocumentLayout.json
+/.vs/VSWorkspaceState.json
+/Kupac.UI.Customers/obj/Debug/net8.0-windows/Kupac.UI.Customers.designer.runtimeconfig.json
+/Kupac.UI.Customers/obj/Release/net8.0-windows/Kupac.UI.Customers.AssemblyInfo.cs
+/Kupac.UI.Customers/obj/Release/net8.0-windows/Kupac.UI.Customers.AssemblyInfoInputs.cache
+/Kupac.UI.Customers/obj/Release/net8.0-windows/Kupac.UI.Customers.assets.cache
+/Kupac.UI.Customers/obj/Release/net8.0-windows/Kupac.UI.Customers.GeneratedMSBuildEditorConfig.editorconfig
+/Kupac.UI.Customers/CustomersEditorForm.resx
+/Kupac.UI.Customers/Kupac.UI.Customers.csproj.user
+/Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.AssemblyInfo.cs
+/Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.AssemblyInfoInputs.cache
+/Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.assets.cache
+/Kupac.UI.Main/obj/Release/net8.0-windows/Kupac.UI.Main.GeneratedMSBuildEditorConfig.editorconfig
