@@ -29,19 +29,72 @@ namespace Kupac
 
             using (var context = new CapillarContext())
             {
+
                 RefreshGrid();
                 CustomizeColumns();
             }
 
-
+            SetLastColumnFill();
+            customerDataGridView.ColumnWidthChanged += CustomerDataGridView_ColumnWidthChanged;
+            this.Resize += CustomersEditorForm_Resize;
         }
 
+        private void CustomerDataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            this.BeginInvoke(new Action(() => SetLastColumnFillColumnWidthChanged()));
+        }
+
+        private void SetLastColumnFillColumnWidthChanged()
+        {
+            if (customerDataGridView.Columns.Count > 0)
+            {
+                foreach (DataGridViewColumn column in customerDataGridView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
+
+                // Az utolsó oszlop kitöltése
+                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 1];
+                lastColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+        }
+
+        private void SetLastColumnFill()
+        {
+            if (customerDataGridView.Columns.Count > 0)
+            {
+                // Az utolsó oszlop kitöltésének engedélyezése
+                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 1];
+                lastColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // A többi oszlop fix méretű
+                foreach (DataGridViewColumn column in customerDataGridView.Columns)
+                {
+                    if (column != lastColumn)
+                    {
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                    }
+                }
+            }
+        }
+
+        private void CustomersEditorForm_Resize(object sender, EventArgs e)
+        {
+            SetLastColumnFill();
+        }
 
         private void CustomizeColumns()
         {
             if (customerDataGridView.Columns["ID"] != null)
             {
-                customerDataGridView.Columns["ID"].Visible = false; // Elrejti az ID-t
+                var idColumn = customerDataGridView.Columns["ID"];
+#if DEBUG
+                idColumn.Visible = true;
+#else
+                idColumn.Visible = false; // Elrejti az ID-t
+#endif
+                idColumn.Width = 50;
+
             }
 
             if (customerDataGridView.Columns["FirstName"] != null)
@@ -71,6 +124,31 @@ namespace Kupac
             if (customerDataGridView.Columns["MobilPhone"] != null)
             {
                 customerDataGridView.Columns["MobilPhone"].HeaderText = "Mobiltelefon";
+            }
+
+            if (customerDataGridView.Columns["Address"] != null)
+            {
+                customerDataGridView.Columns["Address"].HeaderText = "Utca, házszám";
+            }
+
+            if (customerDataGridView.Columns["City"] != null)
+            {
+                customerDataGridView.Columns["City"].HeaderText = "Város";
+            }
+
+            if (customerDataGridView.Columns["PostalCode"] != null)
+            {
+                customerDataGridView.Columns["PostalCode"].HeaderText = "Irányítószám";
+            }
+
+            if (customerDataGridView.Columns["Country"] != null)
+            {
+                customerDataGridView.Columns["Country"].HeaderText = "Ország";
+            }
+
+            if (customerDataGridView.Columns["Phone"] != null)
+            {
+                customerDataGridView.Columns["Phone"].HeaderText = "Telefon2";
             }
         }
 
@@ -145,6 +223,8 @@ namespace Kupac
                 // Adatok frissítése
                 customerDataGridView.DataSource = null;
                 customerDataGridView.DataSource = _customerManager.GetCustomers();
+
+                CustomizeColumns();
             }
             catch (Exception ex)
             {
@@ -186,9 +266,47 @@ namespace Kupac
                     }
                 }
                 catch (Exception ex)
-                 {
-                     MessageBox.Show($"Hiba tortent: {ex.Message}");
-                 }
+                {
+                    MessageBox.Show($"Hiba tortent: {ex.Message}");
+                }
+            }
+        }
+
+        private void deleteCustomerButton_Click(object sender, EventArgs e)
+        {
+            if (customerDataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Kérlek, válassz ki egy ügyfelet a törléshez.");
+                return;
+            }
+
+            var result = MessageBox.Show("Biztosan törölni szeretnéd ezt az ügyfelet?", "Megerősítés", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    int customerId = Convert.ToInt32(customerDataGridView.SelectedRows[0].Cells["ID"].Value);
+
+                    using (var context = new CapillarContext())
+                    {
+                        var customer = context.Customers.Find(customerId);
+                        if (customer != null)
+                        {
+                            context.Customers.Remove(customer);
+                            context.SaveChanges();
+                            MessageBox.Show("Az ügyfél sikeresen törölve.");
+                            RefreshGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Az ügyfél nem található az adatbázisban.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hiba történt a törlés során: {ex.Message}");
+                }
             }
         }
     }

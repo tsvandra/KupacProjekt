@@ -170,8 +170,8 @@
             mainFunctionPanel.Location = new Point(203, 3);
             mainFunctionPanel.Name = "mainFunctionPanel";
             mainFunctionPanel.RowCount = 2;
-            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 22.1649475F));
-            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 77.83505F));
+            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 22.9355927F));
+            mainFunctionPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 77.06441F));
             mainFunctionPanel.Size = new Size(1274, 144);
             mainFunctionPanel.TabIndex = 1;
             // 
@@ -187,20 +187,21 @@
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(54, 25);
+            tableLayoutPanel1.Size = new Size(54, 27);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // minimiseApp
             // 
+            minimiseApp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             minimiseApp.BackColor = Color.Thistle;
-            minimiseApp.Dock = DockStyle.Top;
             minimiseApp.FlatAppearance.BorderSize = 0;
             minimiseApp.FlatStyle = FlatStyle.Flat;
             minimiseApp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             minimiseApp.ForeColor = SystemColors.ControlText;
-            minimiseApp.Location = new Point(3, 3);
+            minimiseApp.Location = new Point(0, 0);
+            minimiseApp.Margin = new Padding(0);
             minimiseApp.Name = "minimiseApp";
-            minimiseApp.Size = new Size(21, 19);
+            minimiseApp.Size = new Size(27, 27);
             minimiseApp.TabIndex = 3;
             minimiseApp.Text = "_";
             minimiseApp.UseVisualStyleBackColor = false;

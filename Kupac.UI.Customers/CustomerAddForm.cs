@@ -54,24 +54,27 @@ namespace Kupac.UI.Customers
 
         private void CustomerAddForm_Load(object sender, EventArgs e)
         {
-            nameTextbox.Text = defaultName;
-            nameTextbox.ForeColor = Color.Gray;
-            priezviskoTextBox.Text = defaultLastName;
-            priezviskoTextBox.ForeColor = Color.Gray;
-            emailTextBox.Text = defaultMail;
-            emailTextBox.ForeColor = Color.Gray;
-            mobilPhoneTextBox.Text = defaultPhone;
-            mobilPhoneTextBox.ForeColor = Color.Gray;
-            addressTextBox.Text = defaultAddress;
-            addressTextBox.ForeColor = Color.Gray;
-            cityTextBox.Text = defaultCity;
-            cityTextBox.ForeColor = Color.Gray;
-            postalCodeTextBox.Text = defaultPostalCode;
-            postalCodeTextBox.ForeColor = Color.Gray;
-            phoneTextBox.Text = defaultPhone;
-            phoneTextBox.ForeColor = Color.Gray;
-            stateTextBox.Text = defaultState;
-            stateTextBox.ForeColor = Color.Gray;
+            if (!isEditMode)
+            {
+                nameTextbox.Text = defaultName;
+                nameTextbox.ForeColor = Color.Gray;
+                priezviskoTextBox.Text = defaultLastName;
+                priezviskoTextBox.ForeColor = Color.Gray;
+                emailTextBox.Text = defaultMail;
+                emailTextBox.ForeColor = Color.Gray;
+                mobilPhoneTextBox.Text = defaultPhone;
+                mobilPhoneTextBox.ForeColor = Color.Gray;
+                addressTextBox.Text = defaultAddress;
+                addressTextBox.ForeColor = Color.Gray;
+                cityTextBox.Text = defaultCity;
+                cityTextBox.ForeColor = Color.Gray;
+                postalCodeTextBox.Text = defaultPostalCode;
+                postalCodeTextBox.ForeColor = Color.Gray;
+                phoneTextBox.Text = defaultPhone;
+                phoneTextBox.ForeColor = Color.Gray;
+                stateTextBox.Text = defaultState;
+                stateTextBox.ForeColor = Color.Gray;
+            }
         }
 
 
@@ -301,10 +304,10 @@ namespace Kupac.UI.Customers
 
         private bool IsPhoneNumberDuplicated(string phoneNumber, CapillarContext context)
         {
-            if (phoneNumber == defaultPhone) 
+            if (phoneNumber == defaultPhone)
                 return false;
 
-            return context.Customers.Any(c => c.MobilPhone == phoneNumber);
+            return context.Customers.Any(c => c.MobilPhone == phoneNumber && (isEditMode == false || c.Id != editingCustomer.Id));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Kupac.UI.Shared;
-using Kupac.UI.Shared.BaseClasses;
+using Kupac.UI.Shared.BaseClasses; 
 
 namespace Kupac
 {
@@ -41,6 +41,7 @@ namespace Kupac
             customerManagerBindingSource = new BindingSource(components);
             addNewCustomerButton = new Button();
             loadingPictureBox = new PictureBox();
+            deleteCustomerButton = new Button();
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
@@ -49,11 +50,13 @@ namespace Kupac
             // 
             // customerDataGridView
             // 
+            customerDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
             customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            customerDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            customerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             customerDataGridView.BorderStyle = BorderStyle.None;
-            customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            customerDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 68, 90);
             dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Bold);
@@ -66,12 +69,14 @@ namespace Kupac
             customerDataGridView.EnableHeadersVisualStyles = false;
             customerDataGridView.GridColor = Color.LightGray;
             customerDataGridView.Location = new Point(49, 53);
+            customerDataGridView.MultiSelect = false;
             customerDataGridView.Name = "customerDataGridView";
             customerDataGridView.ReadOnly = true;
             customerDataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = Color.White;
             customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            customerDataGridView.Size = new Size(1129, 393);
+            customerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            customerDataGridView.Size = new Size(1020, 493);
             customerDataGridView.TabIndex = 21;
             customerDataGridView.CellDoubleClick += customerDataGridView_CellDoubleClick;
             // 
@@ -109,12 +114,28 @@ namespace Kupac
             loadingPictureBox.TabStop = false;
             loadingPictureBox.Visible = false;
             // 
+            // deleteCustomerButton
+            // 
+            deleteCustomerButton.BackColor = Color.Plum;
+            deleteCustomerButton.Cursor = Cursors.Hand;
+            deleteCustomerButton.FlatAppearance.BorderSize = 0;
+            deleteCustomerButton.ForeColor = Color.White;
+            deleteCustomerButton.Location = new Point(203, 15);
+            deleteCustomerButton.Margin = new Padding(2, 1, 2, 1);
+            deleteCustomerButton.Name = "deleteCustomerButton";
+            deleteCustomerButton.Size = new Size(131, 25);
+            deleteCustomerButton.TabIndex = 24;
+            deleteCustomerButton.Text = "ügyfél törlése";
+            deleteCustomerButton.UseVisualStyleBackColor = false;
+            deleteCustomerButton.Click += deleteCustomerButton_Click;
+            // 
             // CustomersEditorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1249, 584);
+            Controls.Add(deleteCustomerButton);
             Controls.Add(loadingPictureBox);
             Controls.Add(addNewCustomerButton);
             Controls.Add(customerDataGridView);
@@ -134,6 +155,7 @@ namespace Kupac
         private BindingSource customerManagerBindingSource;
         private Button addNewCustomerButton;
         private PictureBox loadingPictureBox;
+        private Button deleteCustomerButton;
         //private CustomDataGridView customerDataGridView;
     }
 }

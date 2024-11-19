@@ -98,7 +98,7 @@ namespace Kupac.UI.Shared.BaseClasses
             this.EnableHeadersVisualStyles = false;
 
             // Automatikus oszlop meretezes
-            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
             // Nem engedelyezett szerkesztes kozvetlenul a gridben
             this.ReadOnly = true;
