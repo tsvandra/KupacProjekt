@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Windows.Forms;
+using Kupac.Resources;
 
 namespace Kupac
 {
@@ -22,21 +23,6 @@ namespace Kupac
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             _customerManager = new CustomerManager();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            using (var context = new CapillarContext())
-            {
-
-                RefreshGrid();
-                CustomizeColumns();
-            }
-
-            SetLastColumnFill();
-            customerDataGridView.ColumnWidthChanged += CustomerDataGridView_ColumnWidthChanged;
-            this.Resize += CustomersEditorForm_Resize;
         }
 
         private void CustomerDataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
@@ -308,6 +294,25 @@ namespace Kupac
                     MessageBox.Show($"Hiba történt a törlés során: {ex.Message}");
                 }
             }
+        }
+
+        private void CustomerEditorForm_Load(object sender, EventArgs e)
+        {
+            
+            string imagePath = Path.Combine(Application.StartupPath, "Resources", "Fountain2.gif");
+            loadingPictureBox.Image = Image.FromFile(imagePath);
+                
+            using (var context = new CapillarContext())
+            {
+
+                RefreshGrid();
+                CustomizeColumns();
+            }
+
+            SetLastColumnFill();
+            customerDataGridView.ColumnWidthChanged += CustomerDataGridView_ColumnWidthChanged;
+            this.Resize += CustomersEditorForm_Resize;
+            
         }
     }
 

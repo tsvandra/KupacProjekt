@@ -1,5 +1,6 @@
 ﻿using Kupac.UI.Shared;
-using Kupac.UI.Shared.BaseClasses; 
+using Kupac.UI.Shared.BaseClasses;
+using Kupac.Resources;
 
 namespace Kupac
 {
@@ -35,7 +36,6 @@ namespace Kupac
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersEditorForm));
             customerDataGridView = new CustomDataGridView();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
@@ -105,7 +105,6 @@ namespace Kupac
             // 
             // loadingPictureBox
             // 
-            loadingPictureBox.Image = (Image)resources.GetObject("loadingPictureBox.Image");
             loadingPictureBox.Location = new Point(543, 238);
             loadingPictureBox.Name = "loadingPictureBox";
             loadingPictureBox.Size = new Size(140, 21);
@@ -142,7 +141,7 @@ namespace Kupac
             Margin = new Padding(2, 1, 2, 1);
             Name = "CustomersEditorForm";
             Text = "Form1";
-            Load += Form1_Load;
+            Load += CustomerEditorForm_Load;
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
