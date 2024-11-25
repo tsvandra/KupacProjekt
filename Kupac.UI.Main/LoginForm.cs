@@ -9,22 +9,23 @@ namespace Kupac.UI.Main
 {
     public partial class LoginForm : BaseForm
     {
-
+        public string imagePath = Path.Combine(Application.StartupPath, "Resources", "human_icon.png");
         public LoginForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            pictureBox1.InitialImage = Kupac.Data.Properties.Resources.human_icon;
+            pictureBox1.Image = Image.FromFile(imagePath);
+            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            //pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
-            //pictureBox1.Top = ((this.ClientSize.Height - pictureBox1.Height) / 2) - 50;
+            
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             if (Kupac.Data.Properties.Resources.human_icon != null)
             {
-                pictureBox1.Image = Kupac.Data.Properties.Resources.human_icon;
+               
+                pictureBox1.Image = Image.FromFile(imagePath);
             }
             else
             {

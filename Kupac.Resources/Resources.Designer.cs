@@ -73,19 +73,9 @@ namespace Kupac.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] human_icon_in_circle_vector_25482162 {
+        public static byte[] human_icon {
             get {
-                object obj = ResourceManager.GetObject("human_icon_in_circle_vector_25482162", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] human_icon_in_circle_vector_254821621 {
-            get {
-                object obj = ResourceManager.GetObject("human_icon_in_circle_vector_254821621", resourceCulture);
+                object obj = ResourceManager.GetObject("human_icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }

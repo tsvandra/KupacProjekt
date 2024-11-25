@@ -121,11 +121,8 @@
   <data name="Fountain2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Fountain2.gif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="human_icon_in_circle_vector_25482162" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\human-icon-in-circle-vector-25482162.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="human_icon_in_circle_vector_254821621" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\human-icon-in-circle-vector-25482162.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="human_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\human_icon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="kinga_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\kinga_200.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
