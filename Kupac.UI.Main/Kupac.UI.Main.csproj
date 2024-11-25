@@ -11,24 +11,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\Kupac.Resources\Resources.resx" Link="Resources.resx">
+      <Generator>None</Generator>
+      <CustomToolNamespace>Kupac.Resources</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kupac.Resources\Kupac.Resources.csproj" />
     <ProjectReference Include="..\Kupac.UI.Customers\Kupac.UI.Customers.csproj" />
     <ProjectReference Include="..\Kupac.UI.Shared\Kupac.UI.Shared.csproj" />
     <ProjectReference Include="..\Kupac\Kupac.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resource1.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resource1.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Update="Resources\kinga_200x200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

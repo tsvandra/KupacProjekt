@@ -71,8 +71,6 @@
             // userPictureBox
             // 
             userPictureBox.Dock = DockStyle.Fill;
-            userPictureBox.Image = Properties.Resource1.kinga_200x200;
-            userPictureBox.InitialImage = Properties.Resource1.kinga_200x200;
             userPictureBox.Location = new Point(0, 0);
             userPictureBox.Margin = new Padding(0);
             userPictureBox.Name = "userPictureBox";
