@@ -312,7 +312,8 @@ namespace Kupac
             SetLastColumnFill();
             customerDataGridView.ColumnWidthChanged += CustomerDataGridView_ColumnWidthChanged;
             this.Resize += CustomersEditorForm_Resize;
-            
+
+            toolTip1.SetToolTip(addNewCustomerButton, "Új ügyfél hozzáadása");
         }
     }
 

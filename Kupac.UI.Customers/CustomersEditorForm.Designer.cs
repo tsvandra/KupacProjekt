@@ -33,15 +33,16 @@ namespace Kupac
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             customerDataGridView = new CustomDataGridView();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
             addNewCustomerButton = new Button();
             loadingPictureBox = new PictureBox();
             deleteCustomerButton = new Button();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).BeginInit();
@@ -51,20 +52,20 @@ namespace Kupac
             // customerDataGridView
             // 
             customerDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
-            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(240, 240, 240);
+            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             customerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             customerDataGridView.BorderStyle = BorderStyle.None;
             customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             customerDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 68, 90);
-            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 68, 90);
+            dataGridViewCellStyle5.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             customerDataGridView.EnableHeadersVisualStyles = false;
             customerDataGridView.GridColor = Color.LightGray;
@@ -73,8 +74,8 @@ namespace Kupac
             customerDataGridView.Name = "customerDataGridView";
             customerDataGridView.ReadOnly = true;
             customerDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             customerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             customerDataGridView.Size = new Size(1020, 493);
             customerDataGridView.TabIndex = 21;
@@ -90,16 +91,20 @@ namespace Kupac
             // 
             // addNewCustomerButton
             // 
-            addNewCustomerButton.BackColor = Color.Plum;
+            addNewCustomerButton.AutoSize = true;
+            addNewCustomerButton.BackColor = Color.Transparent;
+            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Center;
             addNewCustomerButton.Cursor = Cursors.Hand;
             addNewCustomerButton.FlatAppearance.BorderSize = 0;
-            addNewCustomerButton.ForeColor = Color.White;
+            addNewCustomerButton.FlatStyle = FlatStyle.Flat;
+            addNewCustomerButton.ForeColor = Color.Transparent;
+            addNewCustomerButton.Image = UI.Customers.Properties.Resources.Add_square_light;
             addNewCustomerButton.Location = new Point(49, 15);
-            addNewCustomerButton.Margin = new Padding(2, 1, 2, 1);
+            addNewCustomerButton.Margin = new Padding(0);
             addNewCustomerButton.Name = "addNewCustomerButton";
-            addNewCustomerButton.Size = new Size(131, 25);
+            addNewCustomerButton.RightToLeft = RightToLeft.No;
+            addNewCustomerButton.Size = new Size(30, 30);
             addNewCustomerButton.TabIndex = 22;
-            addNewCustomerButton.Text = "Új ügyfél";
             addNewCustomerButton.UseVisualStyleBackColor = false;
             addNewCustomerButton.Click += addNewCustomerButton_Click;
             // 
@@ -147,6 +152,7 @@ namespace Kupac
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)loadingPictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -155,6 +161,7 @@ namespace Kupac
         private Button addNewCustomerButton;
         private PictureBox loadingPictureBox;
         private Button deleteCustomerButton;
+        private ToolTip toolTip1;
         //private CustomDataGridView customerDataGridView;
     }
 }

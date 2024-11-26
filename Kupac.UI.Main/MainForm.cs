@@ -22,7 +22,7 @@ namespace Kupac.UI.Main
         {
             InitializeComponent();
 
-            userPictureBox.Image = Resources.Resources.kinga_200x200;
+            //userPictureBox.Image = Resources.Resources.kinga_200x200;
 
             byte[] imageData = Resources.Resources.kinga_200x200;
             using (MemoryStream ms = new MemoryStream(imageData))
