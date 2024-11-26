@@ -33,9 +33,9 @@ namespace Kupac
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             customerDataGridView = new CustomDataGridView();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
@@ -52,20 +52,20 @@ namespace Kupac
             // customerDataGridView
             // 
             customerDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(240, 240, 240);
-            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
+            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             customerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             customerDataGridView.BorderStyle = BorderStyle.None;
             customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             customerDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 68, 90);
-            dataGridViewCellStyle5.Font = new Font("Arial", 12F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 68, 90);
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             customerDataGridView.EnableHeadersVisualStyles = false;
             customerDataGridView.GridColor = Color.LightGray;
@@ -74,8 +74,8 @@ namespace Kupac
             customerDataGridView.Name = "customerDataGridView";
             customerDataGridView.ReadOnly = true;
             customerDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             customerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             customerDataGridView.Size = new Size(1020, 493);
             customerDataGridView.TabIndex = 21;
@@ -93,17 +93,19 @@ namespace Kupac
             // 
             addNewCustomerButton.AutoSize = true;
             addNewCustomerButton.BackColor = Color.Transparent;
+            addNewCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Add_square_light;
             addNewCustomerButton.BackgroundImageLayout = ImageLayout.Center;
             addNewCustomerButton.Cursor = Cursors.Hand;
             addNewCustomerButton.FlatAppearance.BorderSize = 0;
+            addNewCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
+            addNewCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
             addNewCustomerButton.FlatStyle = FlatStyle.Flat;
             addNewCustomerButton.ForeColor = Color.Transparent;
-            addNewCustomerButton.Image = UI.Customers.Properties.Resources.Add_square_light;
             addNewCustomerButton.Location = new Point(49, 15);
             addNewCustomerButton.Margin = new Padding(0);
             addNewCustomerButton.Name = "addNewCustomerButton";
             addNewCustomerButton.RightToLeft = RightToLeft.No;
-            addNewCustomerButton.Size = new Size(30, 30);
+            addNewCustomerButton.Size = new Size(25, 25);
             addNewCustomerButton.TabIndex = 22;
             addNewCustomerButton.UseVisualStyleBackColor = false;
             addNewCustomerButton.Click += addNewCustomerButton_Click;
@@ -120,16 +122,22 @@ namespace Kupac
             // 
             // deleteCustomerButton
             // 
-            deleteCustomerButton.BackColor = Color.Plum;
+            deleteCustomerButton.AutoSize = true;
+            deleteCustomerButton.BackColor = Color.Transparent;
+            deleteCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Remove_light;
+            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Center;
             deleteCustomerButton.Cursor = Cursors.Hand;
             deleteCustomerButton.FlatAppearance.BorderSize = 0;
-            deleteCustomerButton.ForeColor = Color.White;
-            deleteCustomerButton.Location = new Point(203, 15);
-            deleteCustomerButton.Margin = new Padding(2, 1, 2, 1);
+            deleteCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
+            deleteCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
+            deleteCustomerButton.FlatStyle = FlatStyle.Flat;
+            deleteCustomerButton.ForeColor = Color.Transparent;
+            deleteCustomerButton.Location = new Point(83, 15);
+            deleteCustomerButton.Margin = new Padding(0);
             deleteCustomerButton.Name = "deleteCustomerButton";
-            deleteCustomerButton.Size = new Size(131, 25);
+            deleteCustomerButton.Size = new Size(25, 25);
             deleteCustomerButton.TabIndex = 24;
-            deleteCustomerButton.Text = "ügyfél törlése";
+            toolTip1.SetToolTip(deleteCustomerButton, "ügyfél törlése");
             deleteCustomerButton.UseVisualStyleBackColor = false;
             deleteCustomerButton.Click += deleteCustomerButton_Click;
             // 

@@ -10,8 +10,9 @@
 
 namespace Kupac.UI.Customers.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -31,7 +32,9 @@ namespace Kupac.UI.Customers.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
+        //public static Image Remove_light { get; internal set; }
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -66,6 +69,15 @@ namespace Kupac.UI.Customers.Properties {
         internal static System.Drawing.Bitmap Add_square_light {
             get {
                 object obj = ResourceManager.GetObject("Add_square_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap Remove_light
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Remove_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
