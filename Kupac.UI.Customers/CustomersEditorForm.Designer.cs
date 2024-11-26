@@ -77,7 +77,7 @@ namespace Kupac
             dataGridViewCellStyle3.BackColor = Color.White;
             customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             customerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            customerDataGridView.Size = new Size(1020, 493);
+            customerDataGridView.Size = new Size(1130, 493);
             customerDataGridView.TabIndex = 21;
             customerDataGridView.CellDoubleClick += customerDataGridView_CellDoubleClick;
             // 
@@ -94,18 +94,18 @@ namespace Kupac
             addNewCustomerButton.AutoSize = true;
             addNewCustomerButton.BackColor = Color.Transparent;
             addNewCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Add_square_light;
-            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Center;
+            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Stretch;
             addNewCustomerButton.Cursor = Cursors.Hand;
             addNewCustomerButton.FlatAppearance.BorderSize = 0;
             addNewCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
             addNewCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
             addNewCustomerButton.FlatStyle = FlatStyle.Flat;
             addNewCustomerButton.ForeColor = Color.Transparent;
-            addNewCustomerButton.Location = new Point(49, 15);
+            addNewCustomerButton.Location = new Point(49, 14);
             addNewCustomerButton.Margin = new Padding(0);
             addNewCustomerButton.Name = "addNewCustomerButton";
             addNewCustomerButton.RightToLeft = RightToLeft.No;
-            addNewCustomerButton.Size = new Size(25, 25);
+            addNewCustomerButton.Size = new Size(24, 24);
             addNewCustomerButton.TabIndex = 22;
             addNewCustomerButton.UseVisualStyleBackColor = false;
             addNewCustomerButton.Click += addNewCustomerButton_Click;
@@ -125,17 +125,17 @@ namespace Kupac
             deleteCustomerButton.AutoSize = true;
             deleteCustomerButton.BackColor = Color.Transparent;
             deleteCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Remove_light;
-            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Center;
+            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Stretch;
             deleteCustomerButton.Cursor = Cursors.Hand;
             deleteCustomerButton.FlatAppearance.BorderSize = 0;
             deleteCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
             deleteCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
             deleteCustomerButton.FlatStyle = FlatStyle.Flat;
             deleteCustomerButton.ForeColor = Color.Transparent;
-            deleteCustomerButton.Location = new Point(83, 15);
+            deleteCustomerButton.Location = new Point(88, 14);
             deleteCustomerButton.Margin = new Padding(0);
             deleteCustomerButton.Name = "deleteCustomerButton";
-            deleteCustomerButton.Size = new Size(25, 25);
+            deleteCustomerButton.Size = new Size(24, 24);
             deleteCustomerButton.TabIndex = 24;
             toolTip1.SetToolTip(deleteCustomerButton, "ügyfél törlése");
             deleteCustomerButton.UseVisualStyleBackColor = false;
@@ -145,6 +145,7 @@ namespace Kupac
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1249, 584);
             Controls.Add(deleteCustomerButton);
