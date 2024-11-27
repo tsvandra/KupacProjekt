@@ -122,7 +122,9 @@
             customersButton.TabIndex = 8;
             customersButton.Text = "Zákazníci";
             customersButton.UseVisualStyleBackColor = false;
-            customersButton.Click += customersButton_Click;
+            customersButton.MouseEnter += navigationButton_MouseEnter;
+            customersButton.MouseLeave += navigationButton_MouseLeave;
+            customersButton.MouseMove += navigationButton_MouseMove;
             // 
             // dashBoardButton
             // 
@@ -139,7 +141,9 @@
             dashBoardButton.TabIndex = 7;
             dashBoardButton.Text = "Dashboard";
             dashBoardButton.UseVisualStyleBackColor = false;
-            dashBoardButton.Click += dashBoardButton_Click;
+            dashBoardButton.MouseEnter += navigationButton_MouseEnter;
+            dashBoardButton.MouseLeave += navigationButton_MouseLeave;
+            dashBoardButton.MouseMove += navigationButton_MouseMove;
             // 
             // ordersButton
             // 
@@ -156,6 +160,9 @@
             ordersButton.TabIndex = 6;
             ordersButton.Text = "Objednávky";
             ordersButton.UseVisualStyleBackColor = false;
+            ordersButton.MouseEnter += navigationButton_MouseEnter;
+            ordersButton.MouseLeave += navigationButton_MouseLeave;
+            ordersButton.MouseMove += navigationButton_MouseMove;
             // 
             // mainFunctionPanel
             // 
