@@ -81,5 +81,14 @@ namespace Kupac.UI.Customers.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap Add_ring_light
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Add_ring_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

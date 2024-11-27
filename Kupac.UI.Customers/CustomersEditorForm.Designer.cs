@@ -93,8 +93,8 @@ namespace Kupac
             // 
             addNewCustomerButton.AutoSize = true;
             addNewCustomerButton.BackColor = Color.Transparent;
-            addNewCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Add_square_light;
-            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            addNewCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Add_ring_light;
+            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Center;
             addNewCustomerButton.Cursor = Cursors.Hand;
             addNewCustomerButton.FlatAppearance.BorderSize = 0;
             addNewCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
@@ -125,7 +125,7 @@ namespace Kupac
             deleteCustomerButton.AutoSize = true;
             deleteCustomerButton.BackColor = Color.Transparent;
             deleteCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Remove_light;
-            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Stretch;
+            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Center;
             deleteCustomerButton.Cursor = Cursors.Hand;
             deleteCustomerButton.FlatAppearance.BorderSize = 0;
             deleteCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
