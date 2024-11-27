@@ -39,9 +39,9 @@ namespace Kupac
             customerDataGridView = new CustomDataGridView();
             customerManagerBindingSource1 = new BindingSource(components);
             customerManagerBindingSource = new BindingSource(components);
-            addNewCustomerButton = new Button();
+            addNewCustomerButton = new CustomButton();
             loadingPictureBox = new PictureBox();
-            deleteCustomerButton = new Button();
+            deleteCustomerButton = new CustomButton();
             toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)customerManagerBindingSource1).BeginInit();
@@ -91,23 +91,11 @@ namespace Kupac
             // 
             // addNewCustomerButton
             // 
-            addNewCustomerButton.AutoSize = true;
-            addNewCustomerButton.BackColor = Color.Transparent;
             addNewCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Add_ring_light;
-            addNewCustomerButton.BackgroundImageLayout = ImageLayout.Center;
-            addNewCustomerButton.Cursor = Cursors.Hand;
-            addNewCustomerButton.FlatAppearance.BorderSize = 0;
-            addNewCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
-            addNewCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
-            addNewCustomerButton.FlatStyle = FlatStyle.Flat;
-            addNewCustomerButton.ForeColor = Color.Transparent;
             addNewCustomerButton.Location = new Point(49, 14);
-            addNewCustomerButton.Margin = new Padding(0);
             addNewCustomerButton.Name = "addNewCustomerButton";
-            addNewCustomerButton.RightToLeft = RightToLeft.No;
             addNewCustomerButton.Size = new Size(24, 24);
             addNewCustomerButton.TabIndex = 22;
-            addNewCustomerButton.UseVisualStyleBackColor = false;
             addNewCustomerButton.Click += addNewCustomerButton_Click;
             // 
             // loadingPictureBox
@@ -122,23 +110,12 @@ namespace Kupac
             // 
             // deleteCustomerButton
             // 
-            deleteCustomerButton.AutoSize = true;
-            deleteCustomerButton.BackColor = Color.Transparent;
             deleteCustomerButton.BackgroundImage = UI.Customers.Properties.Resources.Remove_light;
-            deleteCustomerButton.BackgroundImageLayout = ImageLayout.Center;
-            deleteCustomerButton.Cursor = Cursors.Hand;
-            deleteCustomerButton.FlatAppearance.BorderSize = 0;
-            deleteCustomerButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(198, 187, 171);
-            deleteCustomerButton.FlatAppearance.MouseOverBackColor = Color.AntiqueWhite;
-            deleteCustomerButton.FlatStyle = FlatStyle.Flat;
-            deleteCustomerButton.ForeColor = Color.Transparent;
             deleteCustomerButton.Location = new Point(88, 14);
-            deleteCustomerButton.Margin = new Padding(0);
             deleteCustomerButton.Name = "deleteCustomerButton";
             deleteCustomerButton.Size = new Size(24, 24);
             deleteCustomerButton.TabIndex = 24;
-            toolTip1.SetToolTip(deleteCustomerButton, "ügyfél törlése");
-            deleteCustomerButton.UseVisualStyleBackColor = false;
+            toolTip1.SetToolTip(deleteCustomerButton, "Ügyfél törlése");
             deleteCustomerButton.Click += deleteCustomerButton_Click;
             // 
             // CustomersEditorForm
@@ -167,9 +144,9 @@ namespace Kupac
         #endregion
         private BindingSource customerManagerBindingSource1;
         private BindingSource customerManagerBindingSource;
-        private Button addNewCustomerButton;
+        private CustomButton addNewCustomerButton;
         private PictureBox loadingPictureBox;
-        private Button deleteCustomerButton;
+        private CustomButton deleteCustomerButton;
         private ToolTip toolTip1;
         //private CustomDataGridView customerDataGridView;
     }
