@@ -39,7 +39,7 @@ namespace Kupac
                 }
 
                 // Az utolsó oszlop kitöltése
-                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 1];
+                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 2];
                 lastColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
@@ -49,7 +49,7 @@ namespace Kupac
             if (customerDataGridView.Columns.Count > 0)
             {
                 // Az utolsó oszlop kitöltésének engedélyezése
-                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 1];
+                var lastColumn = customerDataGridView.Columns[customerDataGridView.Columns.Count - 2];
                 lastColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 // A többi oszlop fix méretű
@@ -249,7 +249,7 @@ namespace Kupac
                             {
                                 editForm.CustomerAdded += RefreshGrid;
                                 editForm.ShowDialog();
-                                RefreshGrid(); // Frissítsd az adatokat
+                                //RefreshGrid(); // Frissítsd az adatokat
                             }
                         }
                         else
@@ -260,7 +260,7 @@ namespace Kupac
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Hiba tortent: {ex.Message}");
+                    MessageBox.Show($"Hiba tortent: {ex.Message}", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -287,18 +287,18 @@ namespace Kupac
                         {
                             context.Customers.Remove(customer);
                             context.SaveChanges();
-                            MessageBox.Show("Az ügyfél sikeresen törölve.");
+                            MessageBox.Show("Az ügyfél sikeresen törölve.", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             RefreshGrid();
                         }
                         else
                         {
-                            MessageBox.Show("Az ügyfél nem található az adatbázisban.");
+                            MessageBox.Show("Az ügyfél nem található az adatbázisban.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Hiba történt a törlés során: {ex.Message}");
+                    MessageBox.Show($"Hiba történt a törlés során: {ex.Message}", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
