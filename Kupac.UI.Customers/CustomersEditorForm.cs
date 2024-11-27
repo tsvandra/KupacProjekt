@@ -15,7 +15,6 @@ namespace Kupac
     {
         public CustomerManager _customerManager;
         private const string defaultText = "Zadat hodnotu";
-        private CustomDataGridView customerDataGridView;
         private CustomersEditorForm customersEditorForm;
 
         public CustomersEditorForm()

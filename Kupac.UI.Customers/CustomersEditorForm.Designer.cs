@@ -52,30 +52,14 @@ namespace Kupac
             // customerDataGridView
             // 
             customerDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
-            customerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             customerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            customerDataGridView.BorderStyle = BorderStyle.None;
-            customerDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             customerDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 68, 90);
-            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            customerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            customerDataGridView.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
             customerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            customerDataGridView.EnableHeadersVisualStyles = false;
-            customerDataGridView.GridColor = Color.LightGray;
             customerDataGridView.Location = new Point(49, 53);
             customerDataGridView.MultiSelect = false;
             customerDataGridView.Name = "customerDataGridView";
             customerDataGridView.ReadOnly = true;
-            customerDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            customerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             customerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             customerDataGridView.Size = new Size(1130, 493);
             customerDataGridView.TabIndex = 21;
@@ -147,6 +131,7 @@ namespace Kupac
         private CustomButton addNewCustomerButton;
         private PictureBox loadingPictureBox;
         private CustomButton deleteCustomerButton;
+        private CustomDataGridView customerDataGridView;
         private ToolTip toolTip1;
         //private CustomDataGridView customerDataGridView;
     }
