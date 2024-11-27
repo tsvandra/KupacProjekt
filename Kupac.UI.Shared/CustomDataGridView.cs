@@ -77,7 +77,24 @@ namespace Kupac.UI.Shared.BaseClasses
 
         private void SetModernStyle()
         {
-            // Fejlec stilus
+            // Fejlec stilusanak beallitasa
+            this.EnableHeadersVisualStyles = false;
+            this.ColumnHeadersDefaultCellStyle = DataGridViewStyles.HeaderStyle();
+
+            // Sorok stilusanak beallitasa
+            this.RowsDefaultCellStyle = DataGridViewStyles.DefaultRowStyle();
+            this.AlternatingRowsDefaultCellStyle = DataGridViewStyles.AlternatingRowStyle();
+
+            //Egyeb megjelenitesi beallitasok 
+
+            this.GridColor = Color.LightGray; 
+            this.BorderStyle = BorderStyle.None;
+            this.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            this.RowHeadersVisible = false;
+            this.ReadOnly = true;
+            this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            /*// Fejlec stilus
             this.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 68, 90);
             this.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             this.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
@@ -101,7 +118,9 @@ namespace Kupac.UI.Shared.BaseClasses
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
             // Nem engedelyezett szerkesztes kozvetlenul a gridben
-            this.ReadOnly = true;
+            this.ReadOnly = true;*/
+
+
         }
     }
 }
