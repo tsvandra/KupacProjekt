@@ -10,6 +10,8 @@ namespace Kupac.UI.Customers
 {
     public partial class CustomerAddForm : BaseForm
     {
+        private bool _isEditMode;
+
         private const string defaultName = "Keresztnév";
         private const string defaultLastName = "Vezetéknév";
         private const string defaultMail = "@";
@@ -27,6 +29,9 @@ namespace Kupac.UI.Customers
         public CustomerAddForm()
         {
             InitializeComponent();
+            _isEditMode = isEditMode;
+
+            
         }
 
         public CustomerAddForm(bool isEditMode = false, Customer customer = null)
@@ -47,6 +52,12 @@ namespace Kupac.UI.Customers
                 postalCodeTextBox.Text = customer.PostalCode;
                 stateTextBox.Text = customer.Country;
                 phoneTextBox.Text = customer.Phone;
+
+                addCustomer.Text = "Mentés";
+            }
+            else
+            {
+                addCustomer.Text = "Hozzáadás";
             }
         }
 
