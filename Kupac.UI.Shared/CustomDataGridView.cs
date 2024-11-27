@@ -25,7 +25,6 @@ namespace Kupac.UI.Shared.BaseClasses
                 {
                     ResetRowColor(_lastHighlightedRowIndex);
                 }
-
                 // Új sor kiemelése, ha nem a kiválasztott sor
                 if (hit.RowIndex != _selectedRowIndex)
                 {
@@ -53,7 +52,6 @@ namespace Kupac.UI.Shared.BaseClasses
                 {
                     ResetRowColor(_selectedRowIndex);
                 }
-
                 // Az új kiválasztott sor színének beállítása
                 this.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DodgerBlue;
                 _selectedRowIndex = e.RowIndex;
@@ -86,41 +84,12 @@ namespace Kupac.UI.Shared.BaseClasses
             this.AlternatingRowsDefaultCellStyle = DataGridViewStyles.AlternatingRowStyle();
 
             //Egyeb megjelenitesi beallitasok 
-
             this.GridColor = Color.LightGray; 
             this.BorderStyle = BorderStyle.None;
             this.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             this.RowHeadersVisible = false;
             this.ReadOnly = true;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            /*// Fejlec stilus
-            this.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 68, 90);
-            this.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            this.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
-
-            // Sorszinezes
-            this.RowsDefaultCellStyle.BackColor = Color.White;
-            this.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
-
-            // Racsvonal szinezes
-            this.GridColor = Color.LightGray;
-
-            // Szegely es cellahatar stilus
-            this.BorderStyle = BorderStyle.None;
-            this.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-
-            // Sor margok elrejtese
-            this.RowHeadersVisible = false;
-            this.EnableHeadersVisualStyles = false;
-
-            // Automatikus oszlop meretezes
-            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-
-            // Nem engedelyezett szerkesztes kozvetlenul a gridben
-            this.ReadOnly = true;*/
-
-
         }
     }
 }

@@ -123,17 +123,25 @@ namespace Kupac
 
             if (customerDataGridView.Columns["PostalCode"] != null)
             {
-                customerDataGridView.Columns["PostalCode"].HeaderText = "Irányítószám";
+                var postalCodeColumn = customerDataGridView.Columns["PostalCode"];
+                postalCodeColumn.HeaderText = "Irányítószám";
+                postalCodeColumn.Width = GetHeaderTextWidth(postalCodeColumn);
+                postalCodeColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
 
             if (customerDataGridView.Columns["Country"] != null)
             {
-                customerDataGridView.Columns["Country"].HeaderText = "Ország";
+                var countryColumn = customerDataGridView.Columns["Country"];
+                countryColumn.HeaderText = "Ország";
+                countryColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                countryColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
             if (customerDataGridView.Columns["Phone"] != null)
             {
-                customerDataGridView.Columns["Phone"].HeaderText = "Telefon2";
+                var phoneColumn = customerDataGridView.Columns["Phone"];
+                phoneColumn.HeaderText = "Telefon2";
+                phoneColumn.Visible = false;
             }
         }
 
@@ -297,7 +305,6 @@ namespace Kupac
 
         private void CustomerEditorForm_Load(object sender, EventArgs e)
         {
-            
             string imagePath = Path.Combine(Application.StartupPath, "Resources", "Fountain2.gif");
             loadingPictureBox.Image = Image.FromFile(imagePath);
                 
@@ -309,11 +316,13 @@ namespace Kupac
             }
 
             SetLastColumnFill();
+
             customerDataGridView.ColumnWidthChanged += CustomerDataGridView_ColumnWidthChanged;
             this.Resize += CustomersEditorForm_Resize;
 
             toolTip1.SetToolTip(addNewCustomerButton, "Új ügyfél hozzáadása");
         }
+
     }
 
 
