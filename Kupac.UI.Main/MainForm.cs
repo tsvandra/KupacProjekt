@@ -81,7 +81,7 @@ namespace Kupac.UI.Main
 
             form.Show();
         }
-
+        // just to test branches
         private void navigationButton_Click(object sender, EventArgs e)
         {
             if (sender is Button clickedButton)
